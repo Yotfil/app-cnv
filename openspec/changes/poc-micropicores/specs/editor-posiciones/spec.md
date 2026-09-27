@@ -14,26 +14,26 @@ El editor SHALL estar en la ruta `/editor` sin enlace desde ninguna pantalla de 
 - **THEN** se muestra el editor con un selector de región
 
 ### Requirement: Mover puntos y ajustar radio
-El editor SHALL mostrar la ilustración de la región elegida con todos sus puntos, permitir arrastrar cada punto a una nueva posición, editar su `radio`, y ver el círculo de acierto resultante. Las coordenadas SHALL guardarse en porcentaje.
+El editor SHALL mostrar la ilustración de la región elegida con todos sus puntos, permitir arrastrar cada punto a una nueva posición, editar su `radius`, y ver el círculo de acierto resultante. Las coordenadas SHALL guardarse en porcentaje.
 
 #### Scenario: Arrastrar un punto
-- **WHEN** se arrastra el marcador de "entrecejo" a otro lugar
+- **WHEN** se arrastra el marcador de `glabella` a otro lugar
 - **THEN** sus `x` e `y` cambian en porcentaje de la imagen y el marcador queda en el nuevo lugar al soltar
 
 #### Scenario: Puntos muy juntos
 - **WHEN** dos puntos se solapan en pantalla
-- **THEN** el editor permite seleccionar cada uno por su clave en una lista lateral
+- **THEN** el editor permite seleccionar cada uno por su `key` en una lista lateral
 
 ### Requirement: Exportar el catálogo
-El editor SHALL exportar `puntos.json` y `regiones.json` completos, con los mismos ids y el orden original, listos para sustituir los archivos del repositorio.
+El editor SHALL exportar `points.json` y `regions.json` completos, con los mismos ids y el orden original, listos para sustituir los archivos del repositorio.
 
 #### Scenario: Exportar tras editar
 - **WHEN** se pulsa "Exportar"
 - **THEN** se descargan los dos archivos JSON con los cambios, y los puntos no editados quedan idénticos a los originales
 
 ### Requirement: Añadir zona en el mapa
-Para las regiones de cuerpo entero, el editor SHALL permitir dibujar o ajustar el polígono `zona` de cada región hija.
+Para las regiones de cuerpo entero, el editor SHALL permitir dibujar o ajustar el polígono `zone` de cada región hija.
 
 #### Scenario: Ajustar la zona de la cara
-- **WHEN** se mueven los vértices del polígono de "cara" sobre el cuerpo frontal
-- **THEN** la `zona` exportada refleja los nuevos vértices en porcentaje
+- **WHEN** se mueven los vértices del polígono de `face` sobre `front-body`
+- **THEN** la `zone` exportada refleja los nuevos vértices en porcentaje

@@ -21,11 +21,11 @@ Los distractores SHALL elegirse con esta prioridad: primero el significado del p
 - **THEN** las tres opciones incorrectas provienen de esa región, y una de ellas es la del punto simétrico cuando existe
 
 #### Scenario: Mismo texto en dos lugares
-- **WHEN** otro punto de la región tiene exactamente el mismo `significado` que el correcto
+- **WHEN** otro punto de la región tiene exactamente el mismo `meaning` que el correcto
 - **THEN** ese texto no se usa como distractor
 
 ### Requirement: Puntos con varios significados
-Si el punto tiene `significados_alternativos`, elegir cualquiera de ellos o el principal SHALL contar como acierto, y ninguno de ellos SHALL aparecer como distractor.
+Si el punto tiene `alternativeMeanings`, elegir cualquiera de ellos o el principal SHALL contar como acierto, y ninguno de ellos SHALL aparecer como distractor.
 
 #### Scenario: Arco de Cupido
 - **WHEN** la pregunta es sobre el arco de Cupido y las opciones incluyen "Relación de autoridad"
@@ -46,8 +46,8 @@ Una sesión SHALL cubrir los puntos de la región elegida en orden aleatorio sin
 - **THEN** aparece el resumen con aciertos, fallos y un botón para repetir
 
 ### Requirement: Alcance del POC
-En este cambio la práctica SHALL estar disponible solo para la región "cara".
+En este cambio la práctica SHALL estar disponible solo para la región `face`.
 
 #### Scenario: Entrada a práctica
-- **WHEN** la persona abre la práctica
+- **WHEN** la persona abre `/practice`
 - **THEN** solo puede elegir "Cara"; las demás regiones aparecen atenuadas

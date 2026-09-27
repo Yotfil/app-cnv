@@ -2,20 +2,24 @@
 
 ## Purpose
 
-Registro en el propio dispositivo de los aciertos y fallos por micropicor y del alias, sin cuentas ni servidor, con una forma que pueda migrarse después a una base de datos.
+Registro en el propio dispositivo de los aciertos y fallos por micropicor y del alias, sin cuentas ni servidor, con una forma que pueda migrarse después a una base de datos con usuarios.
 
 ## ADDED Requirements
 
 ### Requirement: Progreso persistente en el dispositivo
-La app SHALL guardar en el almacenamiento local del navegador un documento de progreso con `version` del esquema, `alias`, `creado` (fecha ISO) y, por id de punto, `aciertos`, `fallos`, `ultimo_intento` (fecha ISO) y `modo` de la última respuesta.
+La app SHALL guardar en el almacenamiento local del navegador un documento de progreso con `version` del esquema, `alias`, `userId` (nulo hasta que exista login), `createdAt` (fecha ISO) y, por id de punto, `hits`, `misses`, `lastAttempt` (fecha ISO) y `mode` de la última respuesta.
 
 #### Scenario: Acierto registrado
-- **WHEN** la persona acierta el punto con id X en el modo "significado"
-- **THEN** `aciertos` de X aumenta en uno, `ultimo_intento` se actualiza y el documento queda guardado antes de la siguiente pregunta
+- **WHEN** la persona acierta el punto con id X en el modo `meaning`
+- **THEN** `hits` de X aumenta en uno, `lastAttempt` se actualiza y el documento queda guardado antes de la siguiente pregunta
 
 #### Scenario: Recarga de página
 - **WHEN** la persona cierra y vuelve a abrir la app en el mismo navegador
 - **THEN** el alias y los contadores son los de antes
+
+#### Scenario: Preparado para login
+- **WHEN** se crea el documento de progreso
+- **THEN** `userId` es nulo y el esquema admite rellenarlo sin migración
 
 ### Requirement: Sin envío a terceros
 El progreso y el alias SHALL permanecer en el dispositivo y no enviarse a ningún servidor en este cambio.

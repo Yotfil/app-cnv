@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Pantalla de entrada que da crédito al curso, muestra el aviso de prudencia del PDF y permite fijar un alias local antes de estudiar.
+Pantalla de entrada que da crédito al curso, muestra el aviso de prudencia del PDF, permite fijar un alias local y muestra la versión de la app.
 
 ## ADDED Requirements
 
@@ -27,3 +27,17 @@ La pantalla inicial SHALL permitir escribir un alias de hasta 30 caracteres, o d
 #### Scenario: Sin alias
 - **WHEN** la persona continúa sin escribir alias
 - **THEN** la app funciona igual y el progreso se guarda sin alias
+
+### Requirement: Versión visible
+La pantalla inicial SHALL mostrar la versión de la app tal como figura en `package.json`.
+
+#### Scenario: Reporte de un fallo
+- **WHEN** un alumno abre la pantalla inicial
+- **THEN** puede leer un texto como "v0.1.0" para incluirlo al reportar un problema
+
+### Requirement: Textos de interfaz externalizados
+Todos los textos visibles de la pantalla SHALL provenir del archivo de mensajes en español, no del código de los componentes.
+
+#### Scenario: Cambio de un texto
+- **WHEN** se corrige la redacción del aviso
+- **THEN** solo cambia el archivo de mensajes, no ningún componente

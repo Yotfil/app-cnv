@@ -10,8 +10,8 @@ Vista de estudio de una región: la ilustración con todos sus micropicores marc
 La vista SHALL dibujar cada punto de la región sobre la ilustración en su posición relativa, con un marcador pequeño y una animación de latido lenta que indique que es interactivo. Todos los puntos de la región se muestran a la vez.
 
 #### Scenario: Región cargada
-- **WHEN** se abre la región "cara"
-- **THEN** cada punto de `puntos.json` cuya `region` es "cara" aparece en la ilustración con latido, sin texto junto al marcador
+- **WHEN** se abre la región `face`
+- **THEN** cada punto de `points.json` cuya `region` es la de `face` aparece en la ilustración con latido, sin texto junto al marcador
 
 #### Scenario: Preferencia de movimiento reducido
 - **WHEN** el sistema operativo indica preferencia por movimiento reducido
@@ -29,18 +29,18 @@ Al pasar el ratón por un marcador (en dispositivos con puntero) o al tocarlo (e
 - **THEN** la ficha aparece como panel inferior fijo y el marcador queda resaltado hasta que se cierra
 
 #### Scenario: Punto con significados alternativos
-- **WHEN** el punto tiene entradas en `significados_alternativos`
+- **WHEN** el punto tiene entradas en `alternativeMeanings`
 - **THEN** la ficha muestra el significado principal y debajo cada alternativo con la indicación "también"
 
 ### Requirement: Rótulo fijo de lateralidad
 La vista SHALL mostrar de forma permanente, a cada lado de la ilustración, un rótulo que indique "Derecha de la persona" en el borde izquierdo de la pantalla y "Izquierda de la persona" en el borde derecho, porque la figura mira al observador.
 
 #### Scenario: Región volteada
-- **WHEN** la región tiene `espejo` verdadero y se muestra el lado contrario
+- **WHEN** la región tiene `mirror` verdadero y se muestra el lado contrario
 - **THEN** los rótulos y las posiciones de los puntos se invierten juntos
 
 ### Requirement: Flechas de gesto
-Cuando un punto declara `flecha`, la vista SHALL dibujar una flecha discreta entre sus dos coordenadas sobre la ilustración, y la ficha SHALL mostrar el texto de `gesto`.
+Cuando un punto declara `arrow`, la vista SHALL dibujar una flecha discreta entre sus dos coordenadas sobre la ilustración, y la ficha SHALL mostrar el texto de `gesture`.
 
 #### Scenario: Mejilla hacia el mentón
 - **WHEN** el punto de la mejilla declara una flecha hacia el mentón

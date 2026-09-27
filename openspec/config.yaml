@@ -7,14 +7,25 @@ context: |
   133 puntos etiquetados en 24 láminas). No se añade contenido que no esté en el PDF.
   La app muestra el aviso de prudencia de la página 2 al entrar y da crédito al curso.
 
-  Idioma: español en UI, datos, documentación y commits. Prompts para IA de imágenes en inglés.
+  Idiomas: código en inglés (identificadores, archivos, campos JSON, claves, URLs);
+  español para conversación, documentación, OpenSpec, commits, contenido del PDF y
+  textos de interfaz (siempre en es.json vía react-i18next). Prompts de imágenes en inglés.
+  Glosario en CONTEXT.md; decisiones transversales en docs/adr/; proceso en docs/workflow.md.
 
-  Stack: React + Vite + TypeScript, CSS Modules, React Router. Sin backend en v1;
-  datos en public/data/*.json con la forma que devolverá una futura API FastAPI.
-  Lógica sin DOM (datos, motor de práctica, progreso) separada de los componentes,
-  pensando en migrar a React Native. Coordenadas de puntos en porcentaje de la imagen.
-  Progreso y alias en localStorage hasta que exista base de datos.
-  Despliegue: GitHub + Netlify con despliegue automático. Móvil primero.
+  Stack: React + Vite + TypeScript strict, CSS Modules, React Router, react-i18next,
+  Vitest + React Testing Library, ESLint + Prettier con husky/lint-staged. npm, Node 24.
+  Estructura por features: src/app, src/features/<feature>/{domain,ui,index.ts}, src/shared.
+  domain/ es TypeScript puro (sin React, DOM, fetch, localStorage); lo exterior entra inyectado.
+  Datos en public/data/regions.json y points.json con la forma de la futura API FastAPI
+  (repositorio aparte). Coordenadas en porcentaje. Progreso en localStorage con userId nulo.
+  Sin librería de estado (hooks propios). ErrorBoundary + reportError; Sentry después.
+  Despliegue: GitHub + Netlify (main a producción, previsualización por PR); GitHub Actions
+  (tsc, lint, tests) requerido para fusionar; merge commit; release-please para versiones.
+  Móvil primero.
+
+  Git: ramas feat/<nombre> o fix/<nombre>, una por cambio; un commit por tarea con mensaje
+  tipo(scope): descripción; los commits y PRs los ejecuta el usuario, Claude entrega el mensaje.
+  TDD estricto solo en los seams de docs/adr/0004-test-seams.md.
 
   Imágenes: ilustraciones planas de un maniquí neutro (sin sexo marcado, sin ropa,
   sin pelo, un tono de piel plano, fondo blanco) generadas por el usuario en la web de

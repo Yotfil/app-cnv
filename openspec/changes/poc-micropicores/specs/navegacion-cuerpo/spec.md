@@ -7,11 +7,11 @@ Mapa de cuerpo entero desde el que se accede a cada región de detalle, con indi
 ## ADDED Requirements
 
 ### Requirement: Mapa con zonas clicables
-La app SHALL mostrar la ilustración de cuerpo entero frontal con una zona por región de detalle que declara ese mapa como `padre`. Cada zona SHALL mostrar el nombre de la región y el número de puntos que contiene.
+La app SHALL mostrar la ilustración de cuerpo entero frontal con una zona por región de detalle que declara ese mapa como `parent`. Cada zona SHALL mostrar el nombre de la región y el número de puntos que contiene.
 
 #### Scenario: Abrir una región
 - **WHEN** la persona toca o hace clic dentro de la zona "Cara"
-- **THEN** la app navega a la vista de estudio de la región "cara"
+- **THEN** la app navega a la vista de estudio de la región `face`
 
 #### Scenario: Región sin imagen todavía
 - **WHEN** una zona corresponde a una región cuya imagen no existe en este cambio
@@ -28,12 +28,12 @@ Las zonas SHALL tener un área táctil mínima de 44 por 44 píxeles CSS y resal
 El mapa SHALL mostrar únicamente zonas y contadores, nunca los puntos individuales.
 
 #### Scenario: Densidad de la cara
-- **WHEN** la región "cara" tiene 12 puntos
+- **WHEN** la región `face` tiene 12 puntos
 - **THEN** el mapa muestra "Cara · 12" y ningún marcador de punto
 
 ### Requirement: Enlace directo por URL
-Cada mapa y cada región SHALL tener una URL propia que se pueda compartir.
+Cada mapa y cada región SHALL tener una URL propia que se pueda compartir, construida con la `key` de la región (`/map`, `/region/face`).
 
 #### Scenario: Compartir región
-- **WHEN** alguien abre la URL de la región "cara" directamente
+- **WHEN** alguien abre `/region/face` directamente
 - **THEN** ve la vista de estudio de esa región con un control para volver al mapa
