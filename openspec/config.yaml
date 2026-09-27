@@ -1,0 +1,35 @@
+schema: spec-driven
+
+context: |
+  Proyecto: "Micropicores", app de estudio para el grupo de la clase del curso
+  "Entrenamiento de Micropicores" (El Código del Comportamiento, sinergología).
+  Fuente única de contenido: ../CC_ENTRENAMIENTO DE MICROPICORES.pdf (27 páginas,
+  133 puntos etiquetados en 24 láminas). No se añade contenido que no esté en el PDF.
+  La app muestra el aviso de prudencia de la página 2 al entrar y da crédito al curso.
+
+  Idioma: español en UI, datos, documentación y commits. Prompts para IA de imágenes en inglés.
+
+  Stack: React + Vite + TypeScript, CSS Modules, React Router. Sin backend en v1;
+  datos en public/data/*.json con la forma que devolverá una futura API FastAPI.
+  Lógica sin DOM (datos, motor de práctica, progreso) separada de los componentes,
+  pensando en migrar a React Native. Coordenadas de puntos en porcentaje de la imagen.
+  Progreso y alias en localStorage hasta que exista base de datos.
+  Despliegue: GitHub + Netlify con despliegue automático. Móvil primero.
+
+  Imágenes: ilustraciones planas de un maniquí neutro (sin sexo marcado, sin ropa,
+  sin pelo, un tono de piel plano, fondo blanco) generadas por el usuario en la web de
+  Gemini Nano Banana con imagen de referencia. Claude escribe los prompts y NUNCA dibuja
+  figuras ni rostros en SVG o código. Las flechas y marcadores SVG sobre la imagen sí.
+
+  Lateralidad (convención del PDF): lado izquierdo del sujeto = personal / yo / deseo;
+  lado derecho del sujeto = exterior / el otro / interés. La figura se muestra de frente
+  (como la ve un observador) con un rótulo fijo de lateralidad.
+
+  Identificadores: id UUID v4 fijo generado una vez + clave legible para humanos.
+
+rules:
+  proposal:
+    - Incluir siempre una sección "Fuera de alcance"
+  tasks:
+    - Tareas de máximo 2 horas cada una
+    - Las tareas que requieren imágenes generadas por el usuario van marcadas "(requiere imagen)"
