@@ -5,8 +5,8 @@
     "name": "Cuerpo, de frente",
     "view": "front",
     "image": "/img/front-body.png",
-    "width": 900,
-    "height": 1600,
+    "width": 768,
+    "height": 1376,
     "mirror": false
   },
   {

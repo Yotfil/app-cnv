@@ -27,7 +27,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 
 ## 3. Prompts e imágenes (requiere imagen)
 
-- [ ] 3.1 Escribir `prompts/front-body.md` en inglés según D9: figura neutra de línea fina en tono piel con luz difusa, sin relleno pleno, sin sexo, sin ropa, sin pelo, tono de piel medio neutro, fondo blanco, frontal, 9:16, brazos ligeramente separados; con `docs/design/referents/` como guía de estilo (no copiar), prompt negativo y lista de comprobación; verificar que el usuario lo ejecuta en la web de Gemini y guarda `public/img/front-body.png` (requiere imagen)
+- [x] 3.1 Escribir `prompts/front-body.md` en inglés según D9: figura neutra de línea fina en tono piel con luz difusa, sin relleno pleno, sin sexo, sin ropa, sin pelo, tono de piel medio neutro, fondo blanco, frontal, 9:16, brazos ligeramente separados; con `docs/design/referents/` como guía de estilo (no copiar), prompt negativo y lista de comprobación; verificar que el usuario lo ejecuta en la web de Gemini y guarda `public/img/front-body.png` (requiere imagen)
 - [ ] 3.2 Escribir `prompts/face.md` con el prompt de recorte de cabeza y cuello usando el cuerpo entero como referencia, formato 1:1, y lista de comprobación (orejas, mentón y base del cuello visibles); verificar que el usuario guarda `public/img/face.png` (requiere imagen)
 - [ ] 3.3 Actualizar `width` y `height` de ambas regiones en `regions.json` con las dimensiones reales de los PNG; verificar que la ilustración se muestra sin deformación en la vista de región (requiere imagen)
 
