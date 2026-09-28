@@ -9,12 +9,12 @@ La app va a crecer: más regiones, más modos de práctica, login, backend, micr
 ## Decisión
 
 ```
-src/app/                         arranque: router, providers, ErrorBoundary
+src/app/                         arranque: router, providers, ErrorBoundary y su pantalla, inicialización de i18n
 src/features/<feature>/domain/   TypeScript puro: sin React, DOM, fetch ni localStorage
 src/features/<feature>/ui/       componentes, hooks y pantallas de esa feature
 src/features/<feature>/index.ts  única puerta de entrada para otras features
 src/shared/ui/                   componentes genéricos sin conocimiento de features
-src/shared/lib/                  i18n, adaptadores de almacenamiento, reportError, uuid
+src/shared/lib/                  textos (i18n/es.json), adaptadores de almacenamiento, reportError, uuid, appVersion
 ```
 
 Reglas: `domain/` recibe inyectado lo que necesita del exterior (fuente de datos, almacén, generador aleatorio). Una feature importa de otra solo por su `index.ts`. `shared/` no importa de `features/`. Estas reglas se hacen cumplir con ESLint (`no-restricted-imports`) cuando la primera violación aparezca en revisión.

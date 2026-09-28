@@ -15,3 +15,4 @@ Todo lo que es estructura va en inglés: identificadores, nombres de archivo y c
 - `CONTEXT.md` mapea cada término español a su nombre en código.
 - Ningún texto visible se escribe en un componente; siempre `t()` sobre `es.json`.
 - Los nombres de campo del catálogo son el contrato con la API; cambiarlos es un cambio de OpenSpec.
+- Los comentarios del código y de los archivos de configuración van en inglés, como el código. Los textos que el usuario lee en GitHub van en español: nombres de jobs y pasos de los workflows ("Tipos, lint y tests") y secciones del changelog ("Funcionalidades").

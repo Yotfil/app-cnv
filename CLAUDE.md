@@ -30,7 +30,7 @@ Idiomas: **código en inglés** (identificadores, archivos, campos JSON, claves 
 openspec validate <nombre> --strict   # el nombre va sin --change
 ```
 
-Un cambio por unidad publicable; `sync` y `archive` al fusionar el PR. Tareas "(requiere imagen)" dependen de una ilustración del usuario; tareas "(explicar)" se hacen narrando cada paso porque el usuario quiere aprender ese proceso.
+Un cambio por unidad publicable; puede llegar a `main` en varios PRs, uno por grupo de tareas terminado. `sync` y `archive` solo tras fusionar el último PR del cambio. Tareas "(requiere imagen)" dependen de una ilustración del usuario; tareas "(explicar)" se hacen narrando cada paso porque el usuario quiere aprender ese proceso.
 
 ## Reglas de git que Claude debe respetar
 
