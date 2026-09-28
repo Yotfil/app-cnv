@@ -65,5 +65,9 @@
     "clearConfirm": "Se borrarán tu alias y tus aciertos de este dispositivo.",
     "clearYes": "Sí, borrar",
     "clearNo": "Cancelar"
+  },
+  "map": {
+    "count_one": "{{count}} micropicor",
+    "count_other": "{{count}} micropicores"
   }
 }

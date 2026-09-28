@@ -1,11 +1,9 @@
-import type { CSSProperties, PointerEventHandler } from 'react'
+import type { PointerEventHandler } from 'react'
 import styles from './Marker.module.css'
+import { Orb, type OrbState, type OrbTone } from './Orb'
 
-/** Colour of the centre: wine for the person's right side, rose for the left, ink for the midline. */
-export type MarkerTone = 'right' | 'left' | 'center'
-
-/** rest: breathing orb · active: the selected one, larger and still · dimmed: the rest while one is active. */
-export type MarkerState = 'rest' | 'active' | 'dimmed'
+export type MarkerTone = OrbTone
+export type MarkerState = OrbState
 
 type Props = {
   /** Position in percent of the illustration (0 to 100). */
@@ -24,8 +22,8 @@ type Props = {
 }
 
 /**
- * Pearl orb marking a point over an Illustration overlay. HTML rather than SVG so it
- * stays round over images that are not square.
+ * Point marker over an Illustration overlay: an orb inside a 44 px hit area. HTML
+ * rather than SVG so it stays round over images that are not square.
  */
 export function Marker({
   x,
@@ -39,19 +37,11 @@ export function Marker({
   onPointerEnter,
   onPointerLeave,
 }: Props) {
-  const style = {
-    left: `${x}%`,
-    top: `${y}%`,
-    '--phase': `-${phase}s`,
-  } as CSSProperties
-
   return (
     <button
       type="button"
       className={styles.hit}
-      style={style}
-      data-tone={tone}
-      data-state={state}
+      style={{ left: `${x}%`, top: `${y}%` }}
       aria-label={label}
       aria-pressed={state === 'active'}
       onClick={onClick}
@@ -59,10 +49,7 @@ export function Marker({
       onPointerEnter={onPointerEnter}
       onPointerLeave={onPointerLeave}
     >
-      <span className={styles.orb}>
-        <span className={styles.ring} />
-        <span className={styles.core} />
-      </span>
+      <Orb tone={tone} state={state} phase={phase} />
     </button>
   )
 }

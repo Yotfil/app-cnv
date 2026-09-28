@@ -1,2 +1,2 @@
-// Until the map exists (task 5.2) studying opens the only region with points.
-export const STUDY_PATH = '/region/face'
+// Studying starts at the full-body map.
+export const STUDY_PATH = '/map'
