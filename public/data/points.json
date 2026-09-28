@@ -17,8 +17,8 @@
     "key": "forehead-right",
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "right",
-    "x": 36,
-    "y": 24,
+    "x": 39,
+    "y": 22,
     "radius": 4,
     "meaning": "Reflexiono: Esto es complicado",
     "alternativeMeanings": [],
@@ -31,7 +31,7 @@
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "left",
     "x": 61,
-    "y": 24,
+    "y": 22,
     "radius": 4,
     "meaning": "Me afecta y quiero resolverlo",
     "alternativeMeanings": [],
@@ -44,7 +44,7 @@
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "center",
     "x": 50,
-    "y": 28,
+    "y": 27,
     "radius": 4,
     "meaning": "Necesito indagar",
     "alternativeMeanings": [],
@@ -56,20 +56,20 @@
     "key": "cheek-left",
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "left",
-    "x": 64,
-    "y": 66,
+    "x": 61,
+    "y": 59,
     "radius": 4,
     "meaning": "Aquí la agresividad es autodirigida, hacia uno mismo y sus propios actos. Suele suceder cuando repetimos errores.",
     "alternativeMeanings": [],
     "tags": [],
     "arrow": {
       "from": {
-        "x": 64,
-        "y": 66
+        "x": 61,
+        "y": 59
       },
       "to": {
         "x": 54,
-        "y": 75
+        "y": 67
       }
     },
     "muscle": "masetero",
@@ -80,20 +80,20 @@
     "key": "cheek-right",
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "right",
-    "x": 35,
-    "y": 66,
+    "x": 39,
+    "y": 59,
     "radius": 4,
     "meaning": "Queremos morder al otro, el otro nos molesta, nos pone nervioso, nos saca de las casillas.",
     "alternativeMeanings": [],
     "tags": [],
     "arrow": {
       "from": {
-        "x": 35,
-        "y": 66
+        "x": 39,
+        "y": 59
       },
       "to": {
         "x": 46,
-        "y": 75
+        "y": 67
       }
     },
     "page": 4
@@ -104,7 +104,7 @@
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "center",
     "x": 50,
-    "y": 70,
+    "y": 63,
     "radius": 4,
     "meaning": "Duda.",
     "alternativeMeanings": [],
@@ -117,7 +117,7 @@
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "center",
     "x": 50,
-    "y": 87,
+    "y": 75,
     "radius": 4,
     "meaning": "CON ESI- Me pone nervioso, posición altiva.",
     "alternativeMeanings": ["ASI- algo escondido me hace dudar"],
@@ -129,8 +129,8 @@
     "key": "neck-right",
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "right",
-    "x": 36,
-    "y": 85,
+    "x": 40,
+    "y": 73,
     "radius": 4,
     "meaning": "El otro me pone nervioso.",
     "alternativeMeanings": [],
@@ -142,8 +142,8 @@
     "key": "neck-left",
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "left",
-    "x": 63,
-    "y": 84,
+    "x": 60,
+    "y": 73,
     "radius": 4,
     "meaning": "Estoy herido, los propósitos del otro me ponen nervioso y voy a acabar diciéndolo.",
     "alternativeMeanings": [],
@@ -156,7 +156,7 @@
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "center",
     "x": 50,
-    "y": 91,
+    "y": 78,
     "radius": 4,
     "meaning": "Tengo muchas ganas de decir lo que no me parece bien.",
     "alternativeMeanings": [],

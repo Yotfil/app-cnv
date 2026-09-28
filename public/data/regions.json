@@ -15,8 +15,8 @@
     "name": "Cara",
     "view": "front",
     "image": "/img/face.png",
-    "width": 1000,
-    "height": 1000,
+    "width": 1024,
+    "height": 1024,
     "parent": "1d1e7f40-4986-4b2d-8b3f-e522216b7c48",
     "zone": [
       { "x": 42, "y": 3 },
