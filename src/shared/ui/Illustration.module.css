@@ -7,7 +7,8 @@
 }
 
 .image,
-.layer {
+.layer,
+.overlay {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -21,4 +22,13 @@
 
 .layer {
   overflow: visible;
+}
+
+/* The overlay lets touches through except on its own elements (markers). */
+.overlay {
+  pointer-events: none;
+}
+
+.overlay > * {
+  pointer-events: auto;
 }

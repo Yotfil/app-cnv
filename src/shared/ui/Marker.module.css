@@ -1,0 +1,112 @@
+/* Orb spec in docs/design/tokens.md ("Orbes"). */
+
+.hit {
+  --tone: var(--color-side-center);
+  --ring: var(--color-skin-line);
+
+  position: absolute;
+  width: var(--touch-min);
+  height: var(--touch-min);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hit[data-tone='right'] {
+  --tone: var(--color-side-right);
+}
+
+.hit[data-tone='left'] {
+  --tone: var(--color-side-left);
+  --ring: var(--color-side-left);
+}
+
+.orb {
+  position: relative;
+  width: var(--orb-rest);
+  height: var(--orb-rest);
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-skin-line);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--color-skin-light) 55%, transparent),
+    0 0 14px 4px color-mix(in srgb, var(--color-skin-light) 90%, transparent);
+  display: grid;
+  place-items: center;
+  transition:
+    width 200ms ease,
+    height 200ms ease,
+    opacity 200ms ease;
+}
+
+.core {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--tone);
+}
+
+.ring {
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px solid var(--ring);
+  opacity: 0.1;
+  animation: breathe var(--orb-breathe-duration) ease-in-out infinite;
+  animation-delay: var(--phase, 0s);
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.1;
+  }
+}
+
+/* Active: larger, wine border and fixed ring, no breathing. */
+.hit[data-state='active'] .orb {
+  width: var(--orb-active);
+  height: var(--orb-active);
+  border-color: var(--color-wine);
+}
+
+.hit[data-state='active'] .core {
+  width: 8px;
+  height: 8px;
+}
+
+.hit[data-state='active'] .ring {
+  animation: none;
+  border-color: var(--color-wine);
+  opacity: 0.5;
+}
+
+/* Dimmed: the other markers while one is active. */
+.hit[data-state='dimmed'] .orb {
+  opacity: 0.45;
+}
+
+.hit[data-state='dimmed'] .ring {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring {
+    animation: none;
+  }
+
+  .orb {
+    transition: none;
+  }
+}
