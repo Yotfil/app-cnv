@@ -14,11 +14,11 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 - [x] 1.8 (explicar) Configurar Netlify (build `npm run build`, publish `dist`, `public/_redirects` con `/* /index.html 200`) con previsualización por PR; verificar que la URL de previsualización del PR muestra la app y que una ruta profunda recargada no da 404
 - [x] 1.9 (explicar) Configurar release-please en Actions y la protección de `main` (solo merge commit, Actions en verde requerido); verificar que tras fusionar el primer commit `feat` release-please abre el PR de versión `v0.1.0`
 - [x] 1.10 Añadir `manifest.webmanifest` con nombre, colores e icono provisional y mostrar la versión de `package.json` en la app; verificar que Chrome en Android ofrece "Añadir a pantalla de inicio" y que se lee "v0.1.0"
-- [ ] 1.11 Revisar `CONTEXT.md`, los ADRs 0001 a 0004 y `docs/workflow.md` (creados en la sesión de diseño) contra lo implementado en el grupo 1 y ajustar lo que difiera; verificar que el usuario sigue `docs/workflow.md` para abrir el primer PR sin ayuda
+- [x] 1.11 Revisar `CONTEXT.md`, los ADRs 0001 a 0004 y `docs/workflow.md` (creados en la sesión de diseño) contra lo implementado en el grupo 1 y ajustar lo que difiera; verificar que el usuario sigue `docs/workflow.md` para abrir el primer PR sin ayuda
 
 ## 2. Modelo y catálogo
 
-- [ ] 2.1 Escribir `src/features/catalog/domain/model.ts` con los tipos `Region`, `Point`, `Side`, `Tag` y `src/features/progress/domain/model.ts` con `Progress` y `Store`, según las specs de catalogo-puntos y progreso-local; verificar que `tsc --noEmit` pasa
+- [x] 2.1 Escribir `src/features/catalog/domain/model.ts` con los tipos `Region`, `Point`, `Side`, `Tag` y `src/features/progress/domain/model.ts` con `Progress` y `Store`, según las specs de catalogo-puntos y progreso-local; verificar que `tsc --noEmit` pasa
 - [ ] 2.2 TDD sobre `loadCatalog(source)` en `catalog.ts`: tests para catálogo válido, punto con región inexistente y región de cuerpo entero sin puntos; verificar que los tres pasan en rojo-verde
 - [ ] 2.3 Escribir `scripts/new-id.ts` que genera UUID v4 y `src/shared/lib/uuid.ts`; verificar que dos ejecuciones producen ids distintos con formato válido
 - [ ] 2.4 Crear `public/data/regions.json` con `front-body` y `face` (ids UUID, `zone` provisional de la cara como rectángulo en porcentaje, `image` apuntando a marcador de posición) y verificar que `loadCatalog` lo acepta
