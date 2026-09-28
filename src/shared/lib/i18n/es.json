@@ -1,6 +1,7 @@
 {
   "app": {
-    "title": "Micropicores"
+    "title": "Micropicores",
+    "version": "v{{version}}"
   },
   "error": {
     "title": "Algo falló",
