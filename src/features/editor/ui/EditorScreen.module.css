@@ -164,3 +164,41 @@
   font-size: var(--size-caption);
   color: var(--color-ink-2);
 }
+
+.zone {
+  fill: color-mix(in srgb, var(--color-skin-light) 20%, transparent);
+  stroke: color-mix(in srgb, var(--color-skin-line) 60%, transparent);
+  stroke-width: 1px;
+  stroke-dasharray: 3 2;
+}
+
+.zone[data-selected] {
+  fill: color-mix(in srgb, var(--color-wine) 10%, transparent);
+  stroke: var(--color-wine);
+  stroke-dasharray: none;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.button {
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-wine);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  color: var(--color-wine);
+  font: inherit;
+  font-size: var(--size-label);
+  cursor: pointer;
+}
+
+.button:disabled {
+  border-color: var(--color-muted-line);
+  color: var(--color-muted-text);
+  cursor: default;
+}

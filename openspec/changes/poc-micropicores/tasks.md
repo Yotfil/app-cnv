@@ -63,7 +63,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 ## 8. Editor de posiciones
 
 - [x] 8.1 `editor/ui/EditorScreen` en `/editor` (sin enlace) con selector de región, lista lateral de puntos por `key`, arrastre de marcadores en porcentaje y edición de `radius` con círculo visible; verificar arrastrando `glabella` y comprobando que el porcentaje cambia
-- [ ] 8.2 Edición de vértices del polígono `zone` de las regiones hijas sobre el mapa; verificar que la zona de `face` se ajusta a la ilustración real
+- [x] 8.2 Edición de vértices del polígono `zone` de las regiones hijas sobre el mapa; verificar que la zona de `face` se ajusta a la ilustración real
 - [ ] 8.3 TDD sobre `editor/domain/export.ts`: `exportCatalog(regions, points)` devuelve ambos JSON completos con ids y orden originales; test de que exportar sin cambios produce archivos idénticos a los cargados
 - [ ] 8.4 Documentar en `docs/editor.md` el flujo "abrir /editor, ajustar, exportar, copiar a public/data, commit, push"; verificar que el usuario lo completa una vez con la cara (requiere imagen)
 

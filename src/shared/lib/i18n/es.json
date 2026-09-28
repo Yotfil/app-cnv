@@ -105,6 +105,17 @@
     "radius": "radio",
     "changes_one": "{{count}} cambio sin exportar",
     "changes_other": "{{count}} cambios sin exportar",
-    "hint": "Arrastra el marcador o usa las flechas del teclado (0,5 %). El círculo es el área de acierto."
+    "hint": "Arrastra el marcador o usa las flechas del teclado (0,5 %). El círculo es el área de acierto.",
+    "zones": "Zonas del mapa",
+    "corner": "Vértice {{number}}",
+    "cornerX": "x del vértice {{number}}",
+    "cornerY": "y del vértice {{number}}",
+    "corners_one": "{{count}} vértice",
+    "corners_other": "{{count}} vértices",
+    "noZone": "sin zona",
+    "createZone": "Crear zona",
+    "addCorner": "Añadir vértice",
+    "removeCorner": "Quitar vértice",
+    "zoneHint": "Arrastra cada vértice o usa las flechas del teclado (0,5 %). \"Añadir vértice\" lo pone a mitad del lado que sale del vértice elegido."
   }
 }
