@@ -1,0 +1,10 @@
+{
+  "app": {
+    "title": "Micropicores"
+  },
+  "error": {
+    "title": "Algo falló",
+    "message": "La aplicación encontró un error inesperado. Recarga la página para seguir.",
+    "reload": "Recargar"
+  }
+}

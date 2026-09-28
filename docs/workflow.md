@@ -34,7 +34,7 @@ Cómo va una tarea desde que se empieza hasta que está publicada con versión. 
    git add -A
    git commit -m "feat(practice): 6.1 motor de preguntas y distractores"
    ```
-3. Al hacer commit se ejecuta el **gancho de pre-commit** (husky + lint-staged): pasa Prettier y ESLint sobre los archivos que vas a guardar. Si hay un error de lint, el commit se cancela y lo ves en la terminal; pide a Claude que lo corrija y repite el commit.
+3. Al hacer commit se ejecuta el **gancho de pre-commit** (husky + lint-staged): comprueba con Prettier y ESLint los archivos que vas a guardar. Si alguno falla, el commit se cancela y lo ves en la terminal. Si es de formato (Prettier), ejecuta `npm run format`, vuelve a hacer `git add -A` y repite el commit; si es de lint (ESLint), pide a Claude que lo corrija.
 4. **[Claude]** Marca la tarea como `[x]` en `tasks.md`; ese cambio va en el mismo commit o en el siguiente.
 
 ## 3. Subir la rama y abrir el pull request
@@ -54,6 +54,7 @@ Cómo va una tarea desde que se empieza hasta que está publicada con versión. 
 ## 4. Fusionar a main
 
 Solo cuando:
+
 - Actions está en verde.
 - Has probado la previsualización en el móvil.
 - Todas las tareas del cambio están marcadas.

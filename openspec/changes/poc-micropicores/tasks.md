@@ -4,12 +4,12 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 
 ## 1. Andamiaje, calidad y despliegue
 
-- [ ] 1.1 Crear la rama `feat/poc-micropicores`, el proyecto con `npm create vite@latest . -- --template react-ts`, `.nvmrc` con `24`, alias `@/` y TypeScript `strict`; verificar que `npm run dev` sirve la página de ejemplo y `npx tsc --noEmit` pasa
-- [ ] 1.2 Crear la estructura `src/app`, `src/features/{catalog,practice,progress,editor,onboarding}/{domain,ui}`, `src/shared/{ui,lib}`, `src/test`, `public/data`, `public/img`, `prompts/`, `docs/adr/`, cada feature con `index.ts`; verificar que `npm run build` termina sin errores
-- [ ] 1.3 Configurar ESLint y Prettier (`npm run lint`, `npm run format`), husky y lint-staged en pre-commit; verificar que un archivo mal formateado bloquea el commit y que tras `format` pasa
-- [ ] 1.4 Instalar Vitest y React Testing Library con un test de humo en `src/test`; verificar que `npx vitest run` pasa y que `npx vitest src/test/smoke.test.ts` ejecuta solo ese archivo
-- [ ] 1.5 Instalar react-i18next con `src/shared/lib/i18n/es.json` y la inicialización en `src/app`; verificar que un texto de ejemplo se lee con `t()` y que la regla de ESLint que prohíbe literales de texto en JSX está activa
-- [ ] 1.6 Añadir `ErrorBoundary` en `src/app` y `reportError()` en `src/shared/lib`; verificar que un error lanzado en un componente muestra la pantalla de error y aparece en consola con su contexto
+- [x] 1.1 Crear la rama `feat/poc-micropicores`, el proyecto con `npm create vite@latest . -- --template react-ts`, `.nvmrc` con `24`, alias `@/` y TypeScript `strict`; verificar que `npm run dev` sirve la página de ejemplo y `npx tsc --noEmit` pasa
+- [x] 1.2 Crear la estructura `src/app`, `src/features/{catalog,practice,progress,editor,onboarding}/{domain,ui}`, `src/shared/{ui,lib}`, `src/test`, `public/data`, `public/img`, `prompts/`, cada feature con `index.ts`, y `src/shared/ui/tokens.css` con las variables de `docs/design/tokens.md` más la carga de Jost e IBM Plex Mono; verificar que `npm run build` termina sin errores
+- [x] 1.3 Sustituir oxlint del template por ESLint: quitar `oxlint` y `.oxlintrc.json`, instalar ESLint 9 (config plana `eslint.config.js`) con typescript-eslint, eslint-plugin-react, eslint-plugin-react-hooks, eslint-plugin-react-refresh y eslint-config-prettier; Prettier con `.prettierrc`; scripts `npm run lint` y `npm run format`; husky y lint-staged en pre-commit. Verificar que un archivo mal formateado bloquea el commit y que tras `format` pasa, y que `npm run lint` no reporta errores en el código del template
+- [x] 1.4 Instalar Vitest y React Testing Library con un test de humo en `src/test`; verificar que `npx vitest run` pasa y que `npx vitest src/test/smoke.test.ts` ejecuta solo ese archivo
+- [x] 1.5 Instalar react-i18next con `src/shared/lib/i18n/es.json` y la inicialización en `src/app`; verificar que un texto de ejemplo se lee con `t()` y que la regla `react/jsx-no-literals` de eslint-plugin-react, que prohíbe literales de texto en JSX, está activa y falla con un literal de prueba
+- [x] 1.6 Añadir `ErrorBoundary` en `src/app` y `reportError()` en `src/shared/lib`; verificar que un error lanzado en un componente muestra la pantalla de error y aparece en consola con su contexto
 - [ ] 1.7 (explicar) Crear `.github/workflows/ci.yml` que ejecute `npm ci`, `tsc --noEmit`, lint y tests en cada PR y push a `main`; verificar que el workflow pasa en GitHub en el primer PR
 - [ ] 1.8 (explicar) Configurar Netlify (build `npm run build`, publish `dist`, `public/_redirects` con `/* /index.html 200`) con previsualización por PR; verificar que la URL de previsualización del PR muestra la app y que una ruta profunda recargada no da 404
 - [ ] 1.9 (explicar) Configurar release-please en Actions y la protección de `main` (solo merge commit, Actions en verde requerido); verificar que tras fusionar el primer commit `feat` release-please abre el PR de versión `v0.1.0`
@@ -27,7 +27,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 
 ## 3. Prompts e imágenes (requiere imagen)
 
-- [ ] 3.1 Escribir `prompts/front-body.md` en inglés: prompt maestro del maniquí neutro plano (sin sexo, sin ropa, sin pelo, un tono de piel, contorno fino, fondo blanco, frontal, 9:16, brazos ligeramente separados), prompt negativo y lista de comprobación; verificar que el usuario lo ejecuta en la web de Gemini y guarda `public/img/front-body.png` (requiere imagen)
+- [ ] 3.1 Escribir `prompts/front-body.md` en inglés según D9: figura neutra de línea fina en tono piel con luz difusa, sin relleno pleno, sin sexo, sin ropa, sin pelo, tono de piel medio neutro, fondo blanco, frontal, 9:16, brazos ligeramente separados; con `docs/design/referents/` como guía de estilo (no copiar), prompt negativo y lista de comprobación; verificar que el usuario lo ejecuta en la web de Gemini y guarda `public/img/front-body.png` (requiere imagen)
 - [ ] 3.2 Escribir `prompts/face.md` con el prompt de recorte de cabeza y cuello usando el cuerpo entero como referencia, formato 1:1, y lista de comprobación (orejas, mentón y base del cuello visibles); verificar que el usuario guarda `public/img/face.png` (requiere imagen)
 - [ ] 3.3 Actualizar `width` y `height` de ambas regiones en `regions.json` con las dimensiones reales de los PNG; verificar que la ilustración se muestra sin deformación en la vista de región (requiere imagen)
 
