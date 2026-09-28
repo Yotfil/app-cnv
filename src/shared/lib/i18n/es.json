@@ -96,5 +96,15 @@
     "notAvailable": "Esta región todavía no se puede practicar.",
     "alias": "Practicando como {{alias}}",
     "notSaved": "Este navegador no deja guardar datos (quizá estás en una ventana privada): tu progreso de hoy se perderá al cerrar la app."
+  },
+  "editor": {
+    "title": "Editor de posiciones",
+    "region": "Región",
+    "points": "Micropicores de la región",
+    "coords": "{{x}}, {{y}}",
+    "radius": "radio",
+    "changes_one": "{{count}} cambio sin exportar",
+    "changes_other": "{{count}} cambios sin exportar",
+    "hint": "Arrastra el marcador o usa las flechas del teclado (0,5 %). El círculo es el área de acierto."
   }
 }
