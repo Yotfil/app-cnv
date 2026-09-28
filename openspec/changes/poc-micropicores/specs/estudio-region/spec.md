@@ -17,6 +17,14 @@ La vista SHALL dibujar cada punto de la región sobre la ilustración en su posi
 - **WHEN** el sistema operativo indica preferencia por movimiento reducido
 - **THEN** los marcadores se muestran sin animación
 
+#### Scenario: Ilustración cargando
+- **WHEN** la ilustración de la región todavía no ha terminado de cargar
+- **THEN** se ve un fondo de espera con la proporción de la imagen y no se muestra ni se puede tocar ningún micropicor ni zona hasta que la imagen está completa
+
+#### Scenario: Ilustración que no carga
+- **WHEN** la imagen de la región no se puede descargar
+- **THEN** la espera se detiene y se muestra un aviso con un botón para reintentar la descarga
+
 ### Requirement: Ficha del punto
 Al pasar el ratón por un marcador (en dispositivos con puntero) o al tocarlo (en táctiles) la vista SHALL mostrar una ficha con: nombre de la zona, lado en palabras ("Lado izquierdo de la persona"), significado literal y, si existen, significados alternativos, gesto y etiquetas. La ficha SHALL cerrarse al tocar fuera o al elegir otro punto.
 

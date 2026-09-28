@@ -5,10 +5,13 @@ Ilustración de la región "Cara": recorte de cabeza y cuello de la misma figura
 ## Cómo usarlo en Gemini
 
 1. En https://gemini.google.com, con el modelo de imagen (Nano Banana), mejor en la misma conversación donde generaste el cuerpo.
-2. Adjunta `public/img/front-body.png` como referencia de la figura y del estilo.
+2. Adjunta `public/img/front-body.webp` como referencia de la figura y del estilo (si Gemini no acepta WebP, conviértela antes: `sips -s format png public/img/front-body.webp --out ~/Desktop/front-body.png`).
 3. Pega el prompt de abajo tal cual.
 4. Revisa el resultado con la lista de comprobación y pide correcciones cortas en inglés sobre la misma imagen si hace falta, por ejemplo: `Same image, zoom out slightly so both ears and the base of the neck are fully visible` o `Same image, without the skin fill, only the fine outline`.
-5. Descarga la imagen y guárdala en `public/img/` (sirve en JPG; yo la convierto a `face.png`).
+5. Descarga la imagen y guárdala en WebP:
+   ```
+   cwebp -q 85 ~/Downloads/<archivo> -o public/img/face.webp
+   ```
 
 No hace falta que la geometría coincida exactamente con el cuerpo: los micropicores se colocan sobre cada imagen por separado. Basta con que se reconozca la misma figura y el mismo estilo.
 
@@ -45,4 +48,4 @@ Acepta la imagen solo si cumple todo:
 
 ## Después de guardarla
 
-Avísame: la convierto a `public/img/face.png`, actualizo `width` y `height` de `face` en `public/data/regions.json` (tarea 3.3) y reviso sobre ella dónde caen los 11 micropicores. Las posiciones finales se ajustan en el editor.
+Avísame: reviso `public/img/face.webp`, actualizo `width` y `height` de `face` en `public/data/regions.json` (tarea 3.3) y reviso sobre ella dónde caen los 11 micropicores. Las posiciones finales se ajustan en el editor.

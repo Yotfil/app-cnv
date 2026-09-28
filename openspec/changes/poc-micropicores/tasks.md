@@ -39,6 +39,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 - [x] 4.4 `shared/ui/SideLabels` con "Derecha de la persona" a la izquierda y "Izquierda de la persona" a la derecha, textos desde `es.json`; verificar que se mantiene visible en 360 px de ancho
 - [x] 4.5 `catalog/ui/PointCard` con nombre de zona, lado en palabras, significado, alternativos con "también", gesto y etiquetas; panel inferior en táctil y tarjeta junto al marcador con puntero; test de Testing Library para "toque abre la ficha y tocar fuera la cierra"; verificar en Chrome escritorio (hover) y en emulación móvil
 - [x] 4.6 `catalog/ui/RegionScreen` en ruta `/region/:key` que carga el catálogo por `useCatalog`, aplica el filtro (sin controles) y compone los componentes anteriores; verificar que todos los puntos de `face` se muestran y que la URL directa funciona con botón de volver al mapa
+- [x] 4.7 (añadida el 28 de septiembre de 2026, a petición del usuario: la ilustración tardaba en aparecer y los micropicores se veían sobre un hueco) Convertir las ilustraciones a WebP (de unos 300 KB a unos 20 KB) y actualizar `regions.json`, `docs/catalog.md` y los prompts; en `shared/ui/Illustration`, fondo de espera con la proporción de la imagen y sin capas de micropicores ni zonas hasta el evento `load`; test de Testing Library para "Ilustración cargando"; verificar en Chrome con red lenta simulada
 
 ## 5. Inicio y mapa
 
