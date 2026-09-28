@@ -74,7 +74,7 @@ Solo cuando:
    - Un `feat` sube la versión menor (0.1.0 → 0.2.0).
    - Un `fix` sube la de parche (0.1.0 → 0.1.1).
    - `chore`, `docs`, `test`, `refactor` no aparecen ni suben versión.
-2. **[tú]** Abre ese PR, corrige el texto del changelog si algo está mal explicado, y fusiónalo cuando quieras publicar la versión. No hace falta hacerlo tras cada cambio; puedes acumular varios.
+2. **[tú]** Abre ese PR, corrige el texto del changelog si algo está mal explicado, y fusiónalo cuando quieras publicar la versión. No hace falta hacerlo tras cada cambio; puedes acumular varios. Como el PR lo abrió Actions, GitHub no lanza el CI hasta que lo apruebas: en el PR o en la pestaña Actions aparece **Approve and run**; púlsalo y espera el check verde como en cualquier PR. Si release-please actualiza el PR, puede volver a pedirlo. Cualquier corrección manual del changelog hazla justo antes de fusionar: release-please reescribe el PR con cada fusión a `main`.
 3. Al fusionarlo, release-please crea la etiqueta `vX.Y.Z` y una "release" en GitHub. Netlify vuelve a publicar y la pantalla de inicio muestra la versión nueva.
 
 ## 6. Cuando algo va mal
@@ -84,6 +84,48 @@ Solo cuando:
 - **Conflicto al fusionar**: GitHub lo avisa en el PR. Pide a Claude que traiga `main` a la rama (`git merge main`) y resuelva; luego commit y push.
 - **Hay que deshacer algo ya publicado**: en GitHub, en el PR fusionado, botón **Revert**; crea un PR inverso que se fusiona igual que cualquier otro.
 
-## 7. Resumen en una línea
+## 7. Configuración de GitHub (una sola vez)
+
+Hecha el 28 de septiembre de 2026 en la tarea 1.9. Si se crea otro repositorio, repetir estos pasos.
+
+### A. Actions puede abrir PRs
+
+**Settings → Actions → General → Workflow permissions**: marcar **Allow GitHub Actions to create and approve pull requests**. Sin esto release-please no puede abrir su PR.
+
+### B. Solo merge commit
+
+**Settings → General → Pull Requests**: solo **Allow merge commits**; squash y rebase desmarcados. **Automatically delete head branches** desmarcado, porque una rama sigue viva mientras su cambio de OpenSpec no esté terminado.
+
+### C. Ruleset `proteger-main`
+
+**Settings → Rules → Rulesets**. Se aplica a la rama por defecto (`main`). Dos palabras que usa GitHub:
+
+- **Ref**: una rama o una etiqueta.
+- **Bypass**: permiso para saltarse las reglas. Lo tiene "Repository admin" (tú) como salida de emergencia, por ejemplo si GitHub Actions está caído y hay que publicar una corrección. GitHub lo ofrece como casilla explícita (**Merge without waiting for requirements to be met**); en uso normal no se marca nunca.
+
+Reglas marcadas:
+
+| Regla                                 | Qué hace                                                    | Por qué                                                                                                                                   |
+| ------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Restrict deletions                    | Nadie sin bypass puede borrar `main`                        | Sin `main` Netlify no tiene qué publicar                                                                                                  |
+| Require a pull request before merging | Prohíbe `git push` directo a `main`                         | El PR es donde corren el CI y la previsualización. Aprobaciones: 0 (no puedes aprobar tu propio PR). Métodos permitidos: solo _Merge_     |
+| Require status checks to pass         | No se fusiona sin el check **Tipos, lint y tests** en verde | Convierte el CI en barrera. _Require branches to be up to date_ desmarcado: con un solo desarrollador `main` casi no cambia durante un PR |
+| Block force pushes                    | Prohíbe `git push --force`                                  | Reescribir la historia de `main` borraría versiones y rompería el changelog                                                               |
+
+Reglas sin marcar:
+
+| Regla                                     | Qué hace                                                  | Por qué no                                                                             |
+| ----------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Restrict creations                        | Solo con bypass se crean refs que coincidan               | Útil con patrones como `release/*`; `main` ya existe                                   |
+| Restrict updates                          | Solo con bypass se puede mover la rama                    | Bloquearía también las fusiones normales; es para congelar ramas viejas                |
+| Require linear history                    | Prohíbe merge commits (solo squash o rebase)              | Queremos un commit por tarea en el changelog y poder revertir un PR con un solo commit |
+| Require deployments to succeed            | Exige un despliegue correcto a un _environment_ de GitHub | No usamos environments; una caída de Netlify impediría fusionar                        |
+| Require signed commits                    | Exige commits firmados con GPG o SSH ("Verified")         | Requiere claves; tiene sentido en equipos. Se puede activar más adelante               |
+| Require code scanning results             | Exige análisis de seguridad (CodeQL) sin hallazgos graves | App estática sin datos sensibles; reconsiderar con backend y login                     |
+| Require code quality results              | Exige análisis de mantenibilidad                          | ESLint ya cubre lo que importa                                                         |
+| Restrict code coverage                    | Exige un porcentaje mínimo de cobertura                   | Contradice el ADR 0004: se prueban seams elegidos, no porcentajes                      |
+| Automatically request Copilot code review | Copilot comenta cada PR nuevo                             | Gasta cuota premium; la revisión la haces tú con la previsualización                   |
+
+## 8. Resumen en una línea
 
 Rama → tareas con un commit cada una (tú haces el commit con el mensaje de Claude) → push → PR con `/reporte-desarrollo` → Actions verde y prueba en la previsualización → merge commit → sync y archive en OpenSpec → PR de release-please cuando quieras versión.
