@@ -1,0 +1,7 @@
+.arrow {
+  fill: none;
+  stroke: var(--color-wine);
+  stroke-width: 1.2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

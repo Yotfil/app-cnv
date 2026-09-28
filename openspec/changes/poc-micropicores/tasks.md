@@ -13,32 +13,32 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 - [x] 1.7 (explicar) Crear `.github/workflows/ci.yml` que ejecute `npm ci`, `tsc --noEmit`, lint y tests en cada PR y push a `main`; verificar que el workflow pasa en GitHub en el primer PR
 - [x] 1.8 (explicar) Configurar Netlify (build `npm run build`, publish `dist`, `public/_redirects` con `/* /index.html 200`) con previsualización por PR; verificar que la URL de previsualización del PR muestra la app y que una ruta profunda recargada no da 404
 - [x] 1.9 (explicar) Configurar release-please en Actions y la protección de `main` (solo merge commit, Actions en verde requerido); verificar que tras fusionar el primer commit `feat` release-please abre el PR de versión `v0.1.0`
-- [ ] 1.10 Añadir `manifest.webmanifest` con nombre, colores e icono provisional y mostrar la versión de `package.json` en la app; verificar que Chrome en Android ofrece "Añadir a pantalla de inicio" y que se lee "v0.1.0"
-- [ ] 1.11 Revisar `CONTEXT.md`, los ADRs 0001 a 0004 y `docs/workflow.md` (creados en la sesión de diseño) contra lo implementado en el grupo 1 y ajustar lo que difiera; verificar que el usuario sigue `docs/workflow.md` para abrir el primer PR sin ayuda
+- [x] 1.10 Añadir `manifest.webmanifest` con nombre, colores e icono provisional y mostrar la versión de `package.json` en la app; verificar que Chrome en Android ofrece "Añadir a pantalla de inicio" y que se lee "v0.1.0"
+- [x] 1.11 Revisar `CONTEXT.md`, los ADRs 0001 a 0004 y `docs/workflow.md` (creados en la sesión de diseño) contra lo implementado en el grupo 1 y ajustar lo que difiera; verificar que el usuario sigue `docs/workflow.md` para abrir el primer PR sin ayuda
 
 ## 2. Modelo y catálogo
 
-- [ ] 2.1 Escribir `src/features/catalog/domain/model.ts` con los tipos `Region`, `Point`, `Side`, `Tag` y `src/features/progress/domain/model.ts` con `Progress` y `Store`, según las specs de catalogo-puntos y progreso-local; verificar que `tsc --noEmit` pasa
-- [ ] 2.2 TDD sobre `loadCatalog(source)` en `catalog.ts`: tests para catálogo válido, punto con región inexistente y región de cuerpo entero sin puntos; verificar que los tres pasan en rojo-verde
-- [ ] 2.3 Escribir `scripts/new-id.ts` que genera UUID v4 y `src/shared/lib/uuid.ts`; verificar que dos ejecuciones producen ids distintos con formato válido
-- [ ] 2.4 Crear `public/data/regions.json` con `front-body` y `face` (ids UUID, `zone` provisional de la cara como rectángulo en porcentaje, `image` apuntando a marcador de posición) y verificar que `loadCatalog` lo acepta
-- [ ] 2.5 Transcribir a `public/data/points.json` los puntos de las láminas 3, 4 y 13 del PDF (frente ×3, entrecejo, mejilla izquierda, mejilla derecha, bajo el labio "Duda", laringe "CON ESI / ASI", y los 3 de la lámina 13 de cuello y mentón), con `side`, `page`, `muscle` cuando el PDF lo nombra, la `arrow` mejilla → mentón, coordenadas propuestas a partir del render del PDF y `radius` por defecto 4; verificar con un test que cada `meaning` coincide carácter a carácter con el texto extraído del PDF salvo erratas listadas
-- [ ] 2.6 Documentar en `docs/catalog.md` la convención de lateralidad, los campos, la política de literalidad y los códigos sin leyenda; verificar que un lector puede añadir un punto nuevo siguiendo solo ese documento
+- [x] 2.1 Escribir `src/features/catalog/domain/model.ts` con los tipos `Region`, `Point`, `Side`, `Tag` y `src/features/progress/domain/model.ts` con `Progress` y `Store`, según las specs de catalogo-puntos y progreso-local; verificar que `tsc --noEmit` pasa
+- [x] 2.2 TDD sobre `loadCatalog(source)` en `catalog.ts`: tests para catálogo válido, punto con región inexistente y región de cuerpo entero sin puntos; verificar que los tres pasan en rojo-verde
+- [x] 2.3 Escribir `scripts/new-id.ts` que genera UUID v4 y `src/shared/lib/uuid.ts`; verificar que dos ejecuciones producen ids distintos con formato válido
+- [x] 2.4 Crear `public/data/regions.json` con `front-body` y `face` (ids UUID, `zone` provisional de la cara como rectángulo en porcentaje, `image` apuntando a marcador de posición) y verificar que `loadCatalog` lo acepta
+- [x] 2.5 Transcribir a `public/data/points.json` los puntos de las láminas 3, 4 y 13 del PDF (frente ×3, entrecejo, mejilla izquierda, mejilla derecha, bajo el labio "Duda", laringe "CON ESI / ASI", y los 3 de la lámina 13 de cuello y mentón), con `side`, `page`, `muscle` cuando el PDF lo nombra, la `arrow` mejilla → mentón, coordenadas propuestas a partir del render del PDF y `radius` por defecto 4; verificar con un test que cada `meaning` coincide carácter a carácter con el texto extraído del PDF salvo erratas listadas
+- [x] 2.6 Documentar en `docs/catalog.md` la convención de lateralidad, los campos, la política de literalidad y los códigos sin leyenda; verificar que un lector puede añadir un punto nuevo siguiendo solo ese documento
 
 ## 3. Prompts e imágenes (requiere imagen)
 
-- [ ] 3.1 Escribir `prompts/front-body.md` en inglés según D9: figura neutra de línea fina en tono piel con luz difusa, sin relleno pleno, sin sexo, sin ropa, sin pelo, tono de piel medio neutro, fondo blanco, frontal, 9:16, brazos ligeramente separados; con `docs/design/referents/` como guía de estilo (no copiar), prompt negativo y lista de comprobación; verificar que el usuario lo ejecuta en la web de Gemini y guarda `public/img/front-body.png` (requiere imagen)
-- [ ] 3.2 Escribir `prompts/face.md` con el prompt de recorte de cabeza y cuello usando el cuerpo entero como referencia, formato 1:1, y lista de comprobación (orejas, mentón y base del cuello visibles); verificar que el usuario guarda `public/img/face.png` (requiere imagen)
-- [ ] 3.3 Actualizar `width` y `height` de ambas regiones en `regions.json` con las dimensiones reales de los PNG; verificar que la ilustración se muestra sin deformación en la vista de región (requiere imagen)
+- [x] 3.1 Escribir `prompts/front-body.md` en inglés según D9: figura neutra de línea fina en tono piel con luz difusa, sin relleno pleno, sin sexo, sin ropa, sin pelo, tono de piel medio neutro, fondo blanco, frontal, 9:16, brazos ligeramente separados; con `docs/design/referents/` como guía de estilo (no copiar), prompt negativo y lista de comprobación; verificar que el usuario lo ejecuta en la web de Gemini y guarda `public/img/front-body.png` (requiere imagen)
+- [x] 3.2 Escribir `prompts/face.md` con el prompt de recorte de cabeza y cuello usando el cuerpo entero como referencia, formato 1:1, y lista de comprobación (orejas, mentón y base del cuello visibles); verificar que el usuario guarda `public/img/face.png` (requiere imagen)
+- [x] 3.3 Actualizar `width` y `height` de ambas regiones en `regions.json` con las dimensiones reales de los PNG; verificar que la ilustración se muestra sin deformación en la vista de región (requiere imagen)
 
 ## 4. Componentes de ilustración y vista de región
 
-- [ ] 4.1 `shared/ui/Illustration` (contenedor de proporción fija, imagen al 100 %, SVG viewBox 0 0 100 100 encima); verificar con un test de render que un marcador en x=50,y=50 queda centrado a dos anchos distintos
-- [ ] 4.2 `shared/ui/Marker` con latido CSS y desactivación bajo `prefers-reduced-motion`; verificar visualmente en Chrome con la preferencia activada y desactivada
-- [ ] 4.3 `shared/ui/Arrow` que dibuja una flecha entre dos coordenadas en porcentaje; verificar con la flecha mejilla → mentón de la cara
-- [ ] 4.4 `shared/ui/SideLabels` con "Derecha de la persona" a la izquierda y "Izquierda de la persona" a la derecha, textos desde `es.json`; verificar que se mantiene visible en 360 px de ancho
-- [ ] 4.5 `catalog/ui/PointCard` con nombre de zona, lado en palabras, significado, alternativos con "también", gesto y etiquetas; panel inferior en táctil y tarjeta junto al marcador con puntero; test de Testing Library para "toque abre la ficha y tocar fuera la cierra"; verificar en Chrome escritorio (hover) y en emulación móvil
-- [ ] 4.6 `catalog/ui/RegionScreen` en ruta `/region/:key` que carga el catálogo por `useCatalog`, aplica el filtro (sin controles) y compone los componentes anteriores; verificar que todos los puntos de `face` se muestran y que la URL directa funciona con botón de volver al mapa
+- [x] 4.1 `shared/ui/Illustration` (contenedor de proporción fija, imagen al 100 %, SVG viewBox 0 0 100 100 encima); verificar con un test de render que un marcador en x=50,y=50 queda centrado a dos anchos distintos
+- [x] 4.2 `shared/ui/Marker` con latido CSS y desactivación bajo `prefers-reduced-motion`; verificar visualmente en Chrome con la preferencia activada y desactivada
+- [x] 4.3 `shared/ui/Arrow` que dibuja una flecha entre dos coordenadas en porcentaje; verificar con la flecha mejilla → mentón de la cara
+- [x] 4.4 `shared/ui/SideLabels` con "Derecha de la persona" a la izquierda y "Izquierda de la persona" a la derecha, textos desde `es.json`; verificar que se mantiene visible en 360 px de ancho
+- [x] 4.5 `catalog/ui/PointCard` con nombre de zona, lado en palabras, significado, alternativos con "también", gesto y etiquetas; panel inferior en táctil y tarjeta junto al marcador con puntero; test de Testing Library para "toque abre la ficha y tocar fuera la cierra"; verificar en Chrome escritorio (hover) y en emulación móvil
+- [x] 4.6 `catalog/ui/RegionScreen` en ruta `/region/:key` que carga el catálogo por `useCatalog`, aplica el filtro (sin controles) y compone los componentes anteriores; verificar que todos los puntos de `face` se muestran y que la URL directa funciona con botón de volver al mapa
 
 ## 5. Inicio y mapa
 

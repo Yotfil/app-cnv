@@ -42,15 +42,17 @@ Familia única Jost (Google Fonts) más IBM Plex Mono para dos rótulos.
 
 ## Orbes (marcadores)
 
-| Estado              | Diámetro    | Detalle                                                                                                                                             |
-| ------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Punto en reposo     | 16 px       | fondo blanco, borde 1 px Piel línea, brillo `0 0 0 4px` Piel luz al 55 % + `0 0 14px 4px` Piel luz al 90 %, punto central 5 px en el color del lado |
-| Anillo que respira  | inset −7 px | borde 1 px Piel línea (rosado en lado izquierdo), escala 1 → 1.4, opacidad 0.65 → 0.1, 3.2 s, desfase distinto por punto                            |
-| Punto activo        | 30 px       | borde y anillo fijo en vino, punto central 8 px, sin respiración; el resto de puntos al 45 % y sin animación                                        |
-| Zona en el mapa     | 22 px       | punto central 6 px vino; línea guía 0.9 px en codo a 45° hasta una etiqueta flotante                                                                |
-| Zona "próximamente" | 22 px       | borde Línea atenuada, sin brillo, punto central Texto atenuado                                                                                      |
+Revisado el 28 de septiembre de 2026 al ver la cara con sus 11 micropicores: el orbe original (16 px, halo doble, anillo con borde y punto oscuro) parecía acné y, repetido y agrupado, puede afectar a personas con tripofobia. Regla: pocos bordes concéntricos, nada de puntos oscuros en reposo.
 
-Con `prefers-reduced-motion: reduce` no hay respiración.
+| Estado              | Diámetro        | Detalle                                                                                                                                                                                                                                             |
+| ------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Punto en reposo     | 12 px           | fondo blanco, borde 1 px Piel línea al 70 %, halo difuso `0 0 12px 4px` Piel luz al 90 % (sin aro de borde nítido), punto central 3 px en el color del lado mezclado al 55 % con blanco                                                             |
+| Onda que respira    | nace en el orbe | un solo anillo de 1 px (Piel línea; rosado en lado izquierdo) nace en el centro, crece de 0.3 a 2.6 veces el orbe y se desvanece (opacidad hasta 0.55); al desaparecer nace el siguiente. 5 s por onda con salida suave, desfase distinto por punto |
+| Punto activo        | 20 px           | borde vino, punto central 6 px en el color del lado, anillo fijo vino a 1.5 veces y opacidad 0.35, sin onda; el resto de puntos al 45 %, sin halo ni onda                                                                                           |
+| Zona en el mapa     | 22 px           | punto central 6 px vino; línea guía 0.9 px en codo a 45° hasta una etiqueta flotante                                                                                                                                                                |
+| Zona "próximamente" | 22 px           | borde Línea atenuada, sin brillo, punto central Texto atenuado                                                                                                                                                                                      |
+
+El área táctil de cada punto es siempre de 44 px aunque el orbe sea menor. Con `prefers-reduced-motion: reduce` no hay onda.
 
 ## Superficies y componentes
 
