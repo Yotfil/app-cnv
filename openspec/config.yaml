@@ -27,9 +27,9 @@ context: |
   tipo(scope): descripción; los commits y PRs los ejecuta el usuario, Claude entrega el mensaje.
   TDD estricto solo en los seams de docs/adr/0004-test-seams.md.
 
-  Imágenes: ilustraciones planas de un maniquí neutro (sin sexo marcado, sin ropa,
-  sin pelo, un tono de piel plano, fondo blanco) generadas por el usuario en la web de
-  Gemini Nano Banana con imagen de referencia. Claude escribe los prompts y NUNCA dibuja
+  Imágenes: figura neutra de línea fina en tono piel con luz difusa, sin relleno pleno
+  (sin sexo marcado, sin ropa, sin pelo, fondo blanco), generada por el usuario en la web de
+  Gemini Nano Banana con imagen de referencia. Lenguaje visual y tokens: docs/design/tokens.md. Claude escribe los prompts y NUNCA dibuja
   figuras ni rostros en SVG o código. Las flechas y marcadores SVG sobre la imagen sí.
 
   Lateralidad (convención del PDF): lado izquierdo del sujeto = personal / yo / deseo;

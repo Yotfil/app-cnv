@@ -2,7 +2,7 @@
 
 Vocabulario del dominio. En la conversación y la documentación se usa el término en español; en el código, el término en inglés indicado entre paréntesis. Cada entrada dice qué no llamar así.
 
-- **Micropicor**: gesto de rascarse en un lugar concreto del cuerpo que la sinergología asocia a un significado. En el catálogo cada micropicor es un **punto**. No usar "picor" ni "gesto" a secas.
+- **Micropicor**: gesto de rascarse en un lugar concreto del cuerpo que la sinergología asocia a un significado. En el catálogo cada micropicor es un **punto**. No usar "picor" ni "gesto" a secas. En los textos que ve el alumno se dice siempre "micropicor" o "micropicores", nunca "punto".
 - **Punto** (`Point`): entrada del catálogo con identidad estable, región, lado, posición en porcentaje y significado literal del PDF. No confundir con **marcador**, que es el círculo dibujado en pantalla para representarlo.
 - **Marcador** (`Marker`): componente visual que dibuja un punto sobre la ilustración, con latido sutil. No es un dato; se deriva del punto.
 - **Región** (`Region`): una ilustración con su lugar en el cuerpo: cuerpo entero frontal, cara, ojos, oreja, torso frontal... Tiene `key` en inglés (`face`, `front-body`) y `name` en español para la interfaz. No usar "vista" para esto; **vista** (`view`) es solo `front`, `back` o `side`.
