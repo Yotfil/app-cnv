@@ -33,21 +33,68 @@
       "external": "Exterior",
       "micro-caress": "Microcaricia",
       "inner-side": "Cara interna"
-    }
+    },
+    "label": "Ficha del micropicor"
   },
   "regionScreen": {
     "backToMap": "Mapa",
     "loading": "Cargando…",
     "loadError": "No se pudo cargar el catálogo. Revisa la conexión y recarga la página.",
-    "notFound": "Esta región no existe."
+    "notFound": "Esta región no existe.",
+    "comingSoon": "Esta región todavía no tiene ilustración. Llegará próximamente."
   },
   "nav": {
     "label": "Navegación principal",
     "study": "Estudiar",
-    "practice": "Practicar"
+    "practice": "Practicar",
+    "home": "Inicio"
   },
   "notFound": {
     "title": "Esta página no existe",
     "message": "Usa la barra de abajo para volver a estudiar."
+  },
+  "home": {
+    "credit": "Del curso «Entrenamiento de Micropicores» de El Código del Comportamiento.",
+    "noticeTitle": "Cuidado, toma estos datos con mucho cuidado.",
+    "notice": {
+      "reliable": "El autor del curso solo ha podido comprobar como fiables unos pocos micropicores.",
+      "context": "Interpreta cada micropicor junto con otros gestos, el contenido verbal, el paraverbal, el estímulo que detona la reacción y el contexto."
+    },
+    "aliasLabel": "Tu alias (opcional)",
+    "aliasHint": "Se guarda solo en este dispositivo.",
+    "continue": "Continuar",
+    "clear": "Borrar mi progreso",
+    "clearConfirm": "Se borrarán tu alias y tus aciertos de este dispositivo.",
+    "clearYes": "Sí, borrar",
+    "clearNo": "Cancelar"
+  },
+  "map": {
+    "count_one": "{{count}} micropicor",
+    "count_other": "{{count}} micropicores",
+    "soon": "próximamente"
+  },
+  "practice": {
+    "pickTitle": "Practicar",
+    "pickLead": "Elige una región para practicar.",
+    "title": "¿Qué significa?",
+    "progress": "{{position}} de {{total}}",
+    "markerLabel": "Micropicor a identificar",
+    "correct": "Correcta",
+    "incorrect": "Tu elección",
+    "right": "Acertaste",
+    "wrong": "No era ese.",
+    "next": "Siguiente",
+    "seeResult": "Ver resultado",
+    "resultTitle": "Resultado",
+    "result": "{{hits}} · {{misses}}",
+    "hits_one": "{{count}} acierto",
+    "hits_other": "{{count}} aciertos",
+    "misses_one": "{{count}} fallo",
+    "misses_other": "{{count}} fallos",
+    "repeat": "Repetir",
+    "otherRegion": "Elegir otra región",
+    "notAvailable": "Esta región todavía no se puede practicar.",
+    "alias": "Practicando como {{alias}}",
+    "notSaved": "Este navegador no deja guardar datos (quizá estás en una ventana privada): tu progreso de hoy se perderá al cerrar la app."
   }
 }

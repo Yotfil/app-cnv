@@ -42,23 +42,23 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 
 ## 5. Inicio y mapa
 
-- [ ] 5.1 `onboarding/ui/HomeScreen` en `/` con crédito, aviso resumido de la página 2, campo alias (máximo 30), versión, botón continuar y acción de borrar progreso con confirmación, todo desde `es.json`; test de Testing Library para "primera visita bloquea, segunda no"; verificar que borrar vuelve al estado inicial
-- [ ] 5.2 `catalog/ui/MapScreen` en `/map` con la ilustración de `front-body` y una zona por región hija (polígono SVG con nombre y contador, área táctil mínima 44 px, resaltado en hover y toque); verificar que "Cara · N" navega a `/region/face` y que no hay desplazamiento horizontal a 360 px
-- [ ] 5.3 Zonas de regiones sin imagen atenuadas con "próximamente"; test de Testing Library para "zona atenuada no navega"
+- [x] 5.1 `onboarding/ui/HomeScreen` en `/` con crédito, aviso resumido de la página 2, campo alias (máximo 30), versión, botón continuar y acción de borrar progreso con confirmación, todo desde `es.json`; test de Testing Library para "primera visita bloquea, segunda no"; verificar que borrar vuelve al estado inicial
+- [x] 5.2 `catalog/ui/MapScreen` en `/map` con la ilustración de `front-body` y una zona por región hija (polígono SVG con nombre y contador, área táctil mínima 44 px, resaltado en hover y toque); verificar que "Cara · N" navega a `/region/face` y que no hay desplazamiento horizontal a 360 px
+- [x] 5.3 Zonas de regiones sin imagen atenuadas con "próximamente"; test de Testing Library para "zona atenuada no navega"
 - [ ] 5.4 (añadida el 28 de septiembre de 2026, a petición del usuario: en la app instalada no hay barra de direcciones) Barra inferior de navegación de `docs/design/tokens.md` con "Estudiar" (mapa; la cara hasta que exista la 5.2) y "Practicar" (atenuado hasta la 6.3), textos desde `es.json`, respetando el área segura del móvil; verificar que desde la app instalada se llega a la cara sin escribir URLs y que no hay desplazamiento horizontal a 360 px
 
 ## 6. Motor de práctica y pantalla
 
-- [ ] 6.1 TDD sobre `practice/domain/question.ts`: `generateQuestion(point, catalog, random)` con la prioridad de distractores (simétrico, misma región, cualquiera), exclusión de textos iguales al correcto y a sus alternativos, e `isCorrect(question, option)`; tests para región con suficientes puntos, región con pocos puntos, texto repetido y punto con alternativos
-- [ ] 6.2 TDD sobre `practice/domain/session.ts`: `createSession(regionKey, catalog, random)` que recorre los puntos sin repetir y devuelve avance y resumen; tests de orden sin repetición y de resumen final
-- [ ] 6.3 `practice/ui/PracticeScreen` en `/practice` con selector de región (solo `face` activa), pregunta con un único marcador visible, cuatro opciones en tarjetas de ancho completo, corrección en rojo y verde, ficha del punto, botón siguiente, avance "n de N" y resumen final con repetir; test de Testing Library para "elegir opción muestra corrección y ficha"; verificar una sesión completa en emulación móvil
-- [ ] 6.4 Documentar en `docs/practice.md` la regla de distractores y los casos especiales; verificar que los ejemplos del documento coinciden con los tests
+- [x] 6.1 TDD sobre `practice/domain/question.ts`: `generateQuestion(point, catalog, random)` con la prioridad de distractores (simétrico, misma región, cualquiera), exclusión de textos iguales al correcto y a sus alternativos, e `isCorrect(question, option)`; tests para región con suficientes puntos, región con pocos puntos, texto repetido y punto con alternativos
+- [x] 6.2 TDD sobre `practice/domain/session.ts`: `createSession(regionKey, catalog, random)` que recorre los puntos sin repetir y devuelve avance y resumen; tests de orden sin repetición y de resumen final
+- [x] 6.3 `practice/ui/PracticeScreen` en `/practice` con selector de región (solo `face` activa), pregunta con un único marcador visible, cuatro opciones en tarjetas de ancho completo, corrección en rojo y verde, ficha del punto, botón siguiente, avance "n de N" y resumen final con repetir; test de Testing Library para "elegir opción muestra corrección y ficha"; verificar una sesión completa en emulación móvil
+- [x] 6.4 Documentar en `docs/practice.md` la regla de distractores y los casos especiales; verificar que los ejemplos del documento coinciden con los tests
 
 ## 7. Progreso local
 
-- [ ] 7.1 TDD sobre `progress/domain/progress.ts` con `Store` inyectable, documento versionado `micropicores.progress.v1` con `userId` nulo, `recordAnswer(pointId, mode, hit)` y `clearProgress()`; tests con almacén en memoria para acierto, fallo, recarga y borrado
-- [ ] 7.2 `shared/lib/storage/localStorageStore.ts` con try/catch, cambio a memoria si falla y aviso único; verificar en Chrome con almacenamiento bloqueado que la práctica sigue y aparece el aviso
-- [ ] 7.3 `progress/ui/useProgress` conectado a la práctica y alias visible en la pantalla de práctica; verificar que tras recargar los contadores del punto se conservan
+- [x] 7.1 TDD sobre `progress/domain/progress.ts` con `Store` inyectable, documento versionado `micropicores.progress.v1` con `userId` nulo, `recordAnswer(pointId, mode, hit)` y `clearProgress()`; tests con almacén en memoria para acierto, fallo, recarga y borrado
+- [x] 7.2 `shared/lib/storage/localStorageStore.ts` con try/catch, cambio a memoria si falla y aviso único; verificar en Chrome con almacenamiento bloqueado que la práctica sigue y aparece el aviso
+- [x] 7.3 `progress/ui/useProgress` conectado a la práctica y alias visible en la pantalla de práctica; verificar que tras recargar los contadores del punto se conservan
 
 ## 8. Editor de posiciones
 

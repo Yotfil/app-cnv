@@ -1,4 +1,4 @@
 /* Room for the fixed bottom bar so it never covers the end of a screen. */
-.layout {
+.withNav {
   padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom));
 }

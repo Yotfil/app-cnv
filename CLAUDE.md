@@ -57,7 +57,7 @@ npm run new-id -- 5     # 5 UUID v4 nuevos para el catálogo
 ## Arquitectura (ver design.md y ADR 0002 para el porqué)
 
 - **Por features.** `src/app/` (router, providers, ErrorBoundary), `src/features/<feature>/{domain,ui,index.ts}`, `src/shared/{ui,lib}`. Features: `catalog`, `practice`, `progress`, `editor`, `onboarding`.
-- **`domain/` es TypeScript puro**: sin React, DOM, `fetch` ni `localStorage`. Lo exterior entra inyectado: `loadCatalog(source)`, `Store` con `read`/`write`, generador aleatorio. Una feature importa de otra solo por su `index.ts`; `shared/` no conoce features.
+- **`domain/` es TypeScript puro**: sin React, DOM, `fetch` ni `localStorage`. Lo exterior entra inyectado: `loadCatalog(source)`, `Store` con `read`/`write`/`clear`, generador aleatorio. Una feature importa de otra solo por su `index.ts`; `shared/` no conoce features.
 - **Datos estáticos con forma de API.** `public/data/regions.json` y `points.json` son listas planas con la forma que devolverá el futuro backend FastAPI (repositorio aparte, contrato OpenAPI).
 - **Coordenadas en porcentaje.** Imagen con proporción fija y `<svg viewBox="0 0 100 100">` encima; puntos y flechas en `x`, `y` de 0 a 100. Nunca píxeles.
 - **Identidad.** `id` UUID v4 fijo (lo referencia el progreso; nunca cambia) y `key` slug en inglés (puede cambiar).

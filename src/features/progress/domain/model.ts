@@ -29,4 +29,6 @@ export type Progress = {
 export type Store = {
   read(): Progress | null
   write(progress: Progress): void
+  /** Removes the document: the device goes back to a first visit. */
+  clear(): void
 }

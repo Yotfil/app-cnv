@@ -41,12 +41,22 @@ export function RegionScreen() {
     )
   }
 
+  if (!region.image) {
+    return (
+      <main className={styles.screen}>
+        {back}
+        <h1 className={styles.title}>{region.name}</h1>
+        <p className={styles.message}>{t('regionScreen.comingSoon')}</p>
+      </main>
+    )
+  }
+
   return (
     <main className={styles.screen}>
       {back}
       <h1 className={styles.title}>{region.name}</h1>
       <RegionIllustration
-        region={region}
+        region={{ ...region, image: region.image }}
         points={pointsOfRegion(state.catalog.points, region.id)}
       />
     </main>

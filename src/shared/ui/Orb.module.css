@@ -1,0 +1,130 @@
+/* Orb spec in docs/design/tokens.md ("Orbes"). Deliberately few concentric edges:
+   clusters of rings and dark dots read as skin blemishes and can trigger trypophobia,
+   so the breathing shows a single ring at a time. */
+
+.orb[data-tone='right'] {
+  --tone: var(--color-side-right);
+}
+
+.orb[data-tone='left'] {
+  --tone: var(--color-side-left);
+  --glow: color-mix(in srgb, var(--color-side-left) 25%, var(--color-skin-light));
+  --ring: var(--color-side-left);
+}
+
+.orb {
+  --tone: var(--color-side-center);
+  --glow: var(--color-skin-light);
+  --ring: var(--color-skin-line);
+
+  position: relative;
+  flex: none;
+  box-sizing: border-box;
+  width: var(--orb-rest);
+  height: var(--orb-rest);
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px solid color-mix(in srgb, var(--color-skin-line) 70%, transparent);
+  /* Static halo: soft glow only, no hard ring. */
+  box-shadow: 0 0 12px 4px color-mix(in srgb, var(--glow) 90%, transparent);
+  display: grid;
+  place-items: center;
+  transition:
+    width 200ms ease,
+    height 200ms ease,
+    opacity 200ms ease;
+}
+
+/* Soft centre in a light version of the side colour, never a dark dot. */
+.core {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--tone) 55%, var(--color-surface));
+}
+
+/* Breathing: one thin ring at a time is born at the centre, grows outwards and
+   fades; as it vanishes the next one starts. Never more than one ring visible. */
+.ring {
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 1px solid var(--ring);
+  opacity: 0;
+  animation: breathe var(--orb-breathe-duration) cubic-bezier(0.25, 0.6, 0.35, 1) infinite;
+  animation-delay: var(--phase, 0s);
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* Active: larger, wine border, full-colour centre and a still wine ring. */
+.orb[data-state='active'] {
+  width: var(--orb-active);
+  height: var(--orb-active);
+  border-color: var(--color-wine);
+}
+
+.orb[data-state='active'] .core {
+  width: 6px;
+  height: 6px;
+  background: var(--tone);
+}
+
+.orb[data-state='active'] .ring {
+  animation: none;
+  border-color: var(--color-wine);
+  opacity: 0.35;
+  transform: scale(1.5);
+}
+
+/* Dimmed: the other markers while one is active. */
+.orb[data-state='dimmed'] {
+  opacity: 0.45;
+  box-shadow: none;
+}
+
+.orb[data-state='dimmed'] .ring {
+  animation: none;
+  opacity: 0;
+}
+
+/* Muted: a region that is not available yet. No glow, no breathing. */
+.orb[data-state='muted'] {
+  border-color: var(--color-muted-line);
+  box-shadow: none;
+}
+
+.orb[data-state='muted'] .core {
+  background: var(--color-muted-text);
+}
+
+.orb[data-state='muted'] .ring {
+  animation: none;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring {
+    animation: none;
+  }
+
+  .orb:not([data-state='active']) .ring {
+    opacity: 0;
+  }
+
+  .orb {
+    transition: none;
+  }
+}

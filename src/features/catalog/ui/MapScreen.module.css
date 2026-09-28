@@ -1,0 +1,120 @@
+/* Map zones in docs/design/tokens.md: the same orb as the points, a guide line with a
+   45° elbow and a floating tag. */
+
+.screen {
+  box-sizing: border-box;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-4) var(--space-6);
+}
+
+.title {
+  margin: var(--space-5) 0 var(--space-4);
+  font-weight: var(--weight-thin);
+  font-size: var(--size-title);
+  line-height: 1.2;
+}
+
+/* The full body is tall: its width is limited so the whole figure fits in the screen
+   height left by the title and the bottom bar (--ratio is width / height of the image). */
+.map {
+  max-width: min(100%, calc((100dvh - 220px) * var(--ratio)));
+  margin: 0 auto;
+}
+
+.message {
+  margin-top: var(--space-5);
+  color: var(--color-ink-2);
+}
+
+.area {
+  fill: color-mix(in srgb, var(--color-skin-light) 16%, transparent);
+  stroke: color-mix(in srgb, var(--color-skin-line) 28%, transparent);
+  stroke-width: 0.9px;
+  transition:
+    fill 200ms ease,
+    stroke 200ms ease;
+}
+
+/* Highlight: a warmer fill and a firmer edge, still in the skin family. */
+.area[data-highlighted] {
+  fill: color-mix(in srgb, var(--color-skin-light) 55%, transparent);
+  stroke: color-mix(in srgb, var(--color-skin-line) 80%, transparent);
+}
+
+.zone {
+  position: absolute;
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  display: grid;
+  place-items: center;
+  color: var(--color-ink);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.zone:hover {
+  color: var(--color-ink);
+}
+
+/* Guide line and tag start at the orb and go to the right, above it. */
+.callout {
+  position: absolute;
+  left: calc(50% + var(--orb-rest) / 2);
+  bottom: 50%;
+  display: flex;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.guide {
+  flex: none;
+  fill: none;
+  stroke: var(--color-skin-line);
+  stroke-width: 0.9;
+}
+
+.tag {
+  display: grid;
+  margin-top: -12px;
+  padding: 6px 10px;
+  white-space: nowrap;
+  background: color-mix(in srgb, var(--color-surface) 78%, transparent);
+  backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in srgb, var(--color-skin-line) 35%, transparent);
+  border-radius: var(--radius-control);
+}
+
+.zone[data-highlighted] .tag {
+  border-color: var(--color-wine);
+}
+
+.name {
+  font-size: var(--size-option);
+  line-height: 1.3;
+}
+
+.count {
+  font-weight: var(--weight-light);
+  font-size: var(--size-caption);
+  color: var(--color-ink-2);
+}
+
+/* Coming soon: muted tones, no highlight, not clickable. */
+.area[data-muted] {
+  fill: transparent;
+  stroke: var(--color-muted-line);
+  stroke-dasharray: 3 3;
+}
+
+.zone[data-muted] {
+  cursor: default;
+}
+
+.zone[data-muted] .guide {
+  stroke: var(--color-muted-line);
+}
+
+.zone[data-muted] .name,
+.zone[data-muted] .count {
+  color: var(--color-muted-text);
+}

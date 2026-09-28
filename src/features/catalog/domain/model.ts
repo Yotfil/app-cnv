@@ -22,8 +22,8 @@ export type Region = {
   /** Spanish name shown in the interface. */
   name: string
   view: View
-  /** Image path relative to the site root. */
-  image: string
+  /** Image path relative to the site root. Absent while the region has no illustration yet: its map zone shows "coming soon". */
+  image?: string
   /** Image size in pixels; gives the fixed aspect ratio of the illustration. */
   width: number
   height: number
