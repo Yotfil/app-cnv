@@ -24,11 +24,11 @@
   overflow: visible;
 }
 
-/* The overlay lets touches through except on its own elements (markers). */
+/* The overlay lets touches through except on interactive elements (markers). */
 .overlay {
   pointer-events: none;
 }
 
-.overlay > * {
+.overlay :is(button, a) {
   pointer-events: auto;
 }

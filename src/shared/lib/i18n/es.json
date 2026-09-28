@@ -7,5 +7,9 @@
     "title": "Algo falló",
     "message": "La aplicación encontró un error inesperado. Recarga la página para seguir.",
     "reload": "Recargar"
+  },
+  "sideLabels": {
+    "personRight": "Derecha de la persona",
+    "personLeft": "Izquierda de la persona"
   }
 }

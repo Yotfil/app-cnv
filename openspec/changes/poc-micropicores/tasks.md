@@ -36,7 +36,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 - [x] 4.1 `shared/ui/Illustration` (contenedor de proporción fija, imagen al 100 %, SVG viewBox 0 0 100 100 encima); verificar con un test de render que un marcador en x=50,y=50 queda centrado a dos anchos distintos
 - [x] 4.2 `shared/ui/Marker` con latido CSS y desactivación bajo `prefers-reduced-motion`; verificar visualmente en Chrome con la preferencia activada y desactivada
 - [x] 4.3 `shared/ui/Arrow` que dibuja una flecha entre dos coordenadas en porcentaje; verificar con la flecha mejilla → mentón de la cara
-- [ ] 4.4 `shared/ui/SideLabels` con "Derecha de la persona" a la izquierda y "Izquierda de la persona" a la derecha, textos desde `es.json`; verificar que se mantiene visible en 360 px de ancho
+- [x] 4.4 `shared/ui/SideLabels` con "Derecha de la persona" a la izquierda y "Izquierda de la persona" a la derecha, textos desde `es.json`; verificar que se mantiene visible en 360 px de ancho
 - [ ] 4.5 `catalog/ui/PointCard` con nombre de zona, lado en palabras, significado, alternativos con "también", gesto y etiquetas; panel inferior en táctil y tarjeta junto al marcador con puntero; test de Testing Library para "toque abre la ficha y tocar fuera la cierra"; verificar en Chrome escritorio (hover) y en emulación móvil
 - [ ] 4.6 `catalog/ui/RegionScreen` en ruta `/region/:key` que carga el catálogo por `useCatalog`, aplica el filtro (sin controles) y compone los componentes anteriores; verificar que todos los puntos de `face` se muestran y que la URL directa funciona con botón de volver al mapa
 
