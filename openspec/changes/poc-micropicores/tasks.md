@@ -56,7 +56,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 
 ## 7. Progreso local
 
-- [ ] 7.1 TDD sobre `progress/domain/progress.ts` con `Store` inyectable, documento versionado `micropicores.progress.v1` con `userId` nulo, `recordAnswer(pointId, mode, hit)` y `clearProgress()`; tests con almacén en memoria para acierto, fallo, recarga y borrado
+- [x] 7.1 TDD sobre `progress/domain/progress.ts` con `Store` inyectable, documento versionado `micropicores.progress.v1` con `userId` nulo, `recordAnswer(pointId, mode, hit)` y `clearProgress()`; tests con almacén en memoria para acierto, fallo, recarga y borrado
 - [ ] 7.2 `shared/lib/storage/localStorageStore.ts` con try/catch, cambio a memoria si falla y aviso único; verificar en Chrome con almacenamiento bloqueado que la práctica sigue y aparece el aviso
 - [ ] 7.3 `progress/ui/useProgress` conectado a la práctica y alias visible en la pantalla de práctica; verificar que tras recargar los contadores del punto se conservan
 

@@ -13,7 +13,7 @@ TDD estricto (rojo, verde, un test y una implementación por ciclo, cortes verti
 1. `loadCatalog(source)`: catálogo válido, punto con región inexistente, región de cuerpo entero sin puntos.
 2. `generateQuestion(point, catalog, random)` e `isCorrect(question, option)`: prioridad de distractores, texto repetido, punto con alternativos, región con pocos puntos.
 3. `createSession(regionKey, catalog, random)`: sin repetición, avance, resumen.
-4. `recordAnswer(pointId, mode, hit)` y `clearProgress()` sobre un `Store` en memoria: acierto, fallo, recarga, borrado.
+4. `recordAnswer(pointId, mode, hit)` y `clearProgress()` sobre un `Store` en memoria: acierto, fallo, recarga, borrado. El puerto `Store` tiene `read`, `write` y `clear` (este último añadido el 28 de septiembre de 2026 con el usuario: borrar el progreso elimina el documento y el dispositivo vuelve a ser una primera visita).
 5. `exportCatalog(regions, points)`: exportar sin cambios produce archivos idénticos.
 
 En UI, React Testing Library solo para los escenarios de interacción que las specs describen (la ficha se abre al tocar y se cierra al tocar fuera; zona atenuada no navega; elegir opción muestra corrección; primera visita bloquea y segunda no). Nada de tests de "se renderiza"; la única excepción es `src/test/smoke.test.ts`, que comprueba que Vitest, jsdom y Testing Library están bien conectados. Playwright cuando haya más de una región.
