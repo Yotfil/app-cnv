@@ -39,10 +39,10 @@
   --tracking-mono: 0.12em;
 
   /* Orbs */
-  --orb-rest: 16px;
-  --orb-active: 30px;
+  --orb-rest: 12px;
+  --orb-active: 20px;
   --orb-zone: 22px;
-  --orb-breathe-duration: 3.2s;
+  --orb-breathe-duration: 5s;
 
   /* Layout */
   --space-1: 4px;
