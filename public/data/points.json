@@ -1,0 +1,166 @@
+[
+  {
+    "id": "2ccb4471-d9ec-4355-b1d0-76a1e57d39a2",
+    "key": "forehead-top",
+    "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "side": "center",
+    "x": 50,
+    "y": 12,
+    "radius": 4,
+    "meaning": "Reflexiono",
+    "alternativeMeanings": [],
+    "tags": [],
+    "page": 3
+  },
+  {
+    "id": "fdfd8fab-5d27-45be-be6e-2bb833fd94f5",
+    "key": "forehead-right",
+    "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "side": "right",
+    "x": 36,
+    "y": 24,
+    "radius": 4,
+    "meaning": "Reflexiono: Esto es complicado",
+    "alternativeMeanings": [],
+    "tags": [],
+    "page": 3
+  },
+  {
+    "id": "29315573-3f7e-40d7-aed5-37c84603cfda",
+    "key": "forehead-left",
+    "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "side": "left",
+    "x": 61,
+    "y": 24,
+    "radius": 4,
+    "meaning": "Me afecta y quiero resolverlo",
+    "alternativeMeanings": [],
+    "tags": [],
+    "page": 3
+  },
+  {
+    "id": "9655f726-9282-47cd-93e1-e8d3a3f0382f",
+    "key": "glabella",
+    "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "side": "center",
+    "x": 50,
+    "y": 28,
+    "radius": 4,
+    "meaning": "Necesito indagar",
+    "alternativeMeanings": [],
+    "tags": [],
+    "page": 3
+  },
+  {
+    "id": "d9a6baa0-ba0e-458b-b415-a2195220df64",
+    "key": "cheek-left",
+    "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "side": "left",
+    "x": 64,
+    "y": 66,
+    "radius": 4,
+    "meaning": "Aquí la agresividad es autodirigida, hacia uno mismo y sus propios actos. Suele suceder cuando repetimos errores.",
+    "alternativeMeanings": [],
+    "tags": [],
+    "arrow": {
+      "from": {
+        "x": 64,
+        "y": 66
+      },
+      "to": {
+        "x": 54,
+        "y": 75
+      }
+    },
+    "muscle": "masetero",
+    "page": 4
+  },
+  {
+    "id": "727fe01b-b4c3-4d97-affe-8cc2d98504b3",
+    "key": "cheek-right",
+    "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "side": "right",
+    "x": 35,
+    "y": 66,
+    "radius": 4,
+    "meaning": "Queremos morder al otro, el otro nos molesta, nos pone nervioso, nos saca de las casillas.",
+    "alternativeMeanings": [],
+    "tags": [],
+    "arrow": {
+      "from": {
+        "x": 35,
+        "y": 66
+      },
+      "to": {
+        "x": 46,
+        "y": 75
+      }
+    },
+    "page": 4
+  },
+  {
+    "id": "22f24b45-198d-440c-a5f7-d7a0fe1d3616",
+    "key": "below-lip",
+    "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "side": "center",
+    "x": 50,
+    "y": 70,
+    "radius": 4,
+    "meaning": "Duda.",
+    "alternativeMeanings": [],
+    "tags": [],
+    "page": 4
+  },
+  {
+    "id": "fbb37b6d-8ade-42f1-837b-ef646fd646ab",
+    "key": "larynx",
+    "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "side": "center",
+    "x": 50,
+    "y": 87,
+    "radius": 4,
+    "meaning": "CON ESI- Me pone nervioso, posición altiva.",
+    "alternativeMeanings": ["ASI- algo escondido me hace dudar"],
+    "tags": [],
+    "page": 4
+  },
+  {
+    "id": "1cc91359-3f18-4a91-8ced-18253a011b03",
+    "key": "neck-right",
+    "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "side": "right",
+    "x": 36,
+    "y": 85,
+    "radius": 4,
+    "meaning": "El otro me pone nervioso.",
+    "alternativeMeanings": [],
+    "tags": [],
+    "page": 13
+  },
+  {
+    "id": "fc4e03c6-44c0-4943-99e7-d6965543c2d9",
+    "key": "neck-left",
+    "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "side": "left",
+    "x": 63,
+    "y": 84,
+    "radius": 4,
+    "meaning": "Estoy herido, los propósitos del otro me ponen nervioso y voy a acabar diciéndolo.",
+    "alternativeMeanings": [],
+    "tags": [],
+    "page": 13
+  },
+  {
+    "id": "73f84e23-7242-4ac2-87e1-4771f7d48a8b",
+    "key": "neck-base",
+    "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "side": "center",
+    "x": 50,
+    "y": 91,
+    "radius": 4,
+    "meaning": "Tengo muchas ganas de decir lo que no me parece bien.",
+    "alternativeMeanings": [],
+    "tags": [],
+    "page": 13
+  }
+]
