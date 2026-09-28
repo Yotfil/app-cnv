@@ -45,6 +45,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 - [ ] 5.1 `onboarding/ui/HomeScreen` en `/` con crédito, aviso resumido de la página 2, campo alias (máximo 30), versión, botón continuar y acción de borrar progreso con confirmación, todo desde `es.json`; test de Testing Library para "primera visita bloquea, segunda no"; verificar que borrar vuelve al estado inicial
 - [ ] 5.2 `catalog/ui/MapScreen` en `/map` con la ilustración de `front-body` y una zona por región hija (polígono SVG con nombre y contador, área táctil mínima 44 px, resaltado en hover y toque); verificar que "Cara · N" navega a `/region/face` y que no hay desplazamiento horizontal a 360 px
 - [ ] 5.3 Zonas de regiones sin imagen atenuadas con "próximamente"; test de Testing Library para "zona atenuada no navega"
+- [ ] 5.4 (añadida el 28 de septiembre de 2026, a petición del usuario: en la app instalada no hay barra de direcciones) Barra inferior de navegación de `docs/design/tokens.md` con "Estudiar" (mapa; la cara hasta que exista la 5.2) y "Practicar" (atenuado hasta la 6.3), textos desde `es.json`, respetando el área segura del móvil; verificar que desde la app instalada se llega a la cara sin escribir URLs y que no hay desplazamiento horizontal a 360 px
 
 ## 6. Motor de práctica y pantalla
 
