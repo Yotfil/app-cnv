@@ -133,3 +133,11 @@
   font-size: var(--size-mono);
   color: var(--color-ink-2);
 }
+
+.progressLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-min);
+  margin-top: var(--space-4);
+  font-size: var(--size-label);
+}

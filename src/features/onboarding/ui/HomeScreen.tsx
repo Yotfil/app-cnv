@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { ALIAS_MAX_LENGTH, useProgress } from '@/features/progress'
 import { appVersion } from '@/shared/lib/appVersion'
 import styles from './HomeScreen.module.css'
@@ -60,6 +60,12 @@ export function HomeScreen({ studyPath }: Props) {
           {t('home.continue')}
         </button>
       </form>
+
+      {progress && (
+        <Link to="/progress" className={styles.progressLink}>
+          {t('progressScreen.link')}
+        </Link>
+      )}
 
       {progress && (
         <div className={styles.clear}>

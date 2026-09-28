@@ -30,6 +30,12 @@ export function BottomNav() {
         </svg>
         {t('nav.practice')}
       </NavLink>
+      <NavLink to="/progress" className={styles.item}>
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden>
+          <path d="M5 19.5v-6M10 19.5v-10M15 19.5v-7M20 19.5V5.5" />
+        </svg>
+        {t('nav.progress')}
+      </NavLink>
     </nav>
   )
 }

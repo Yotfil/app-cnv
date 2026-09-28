@@ -47,7 +47,8 @@
     "label": "Navegación principal",
     "study": "Estudiar",
     "practice": "Practicar",
-    "home": "Inicio"
+    "home": "Inicio",
+    "progress": "Progreso"
   },
   "notFound": {
     "title": "Esta página no existe",
@@ -123,5 +124,14 @@
   "illustration": {
     "failed": "No se pudo cargar la ilustración.",
     "retry": "Reintentar"
+  },
+  "progressScreen": {
+    "title": "Tu progreso",
+    "empty": "Aún no has practicado.",
+    "goPractice": "Empieza en Practicar.",
+    "practiced": "practicados {{practiced}} de {{total}}",
+    "stats": "{{hits}} · {{misses}} · {{date}}",
+    "notPracticed": "sin practicar",
+    "link": "Ver mi progreso"
   }
 }
