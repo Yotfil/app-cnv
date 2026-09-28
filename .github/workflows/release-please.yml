@@ -1,0 +1,21 @@
+# Opens and updates the release PR from conventional commits on main.
+# Merging that PR creates the vX.Y.Z tag and the GitHub release.
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    name: Preparar versión
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v5
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
