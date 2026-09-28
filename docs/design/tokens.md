@@ -6,21 +6,21 @@ Carácter: "cuaderno del observador". Sobrio, preciso, calmado. Lo único que ll
 
 ## Color
 
-| Token CSS | Nombre | Hex | Uso |
-|---|---|---|---|
-| `--color-bg` | Fondo | `#F8F8F7` | fondo general, blanco neutro |
-| `--color-surface` | Superficie | `#FFFFFF` | ilustración, ficha, opciones, barra inferior |
-| `--color-ink` | Tinta | `#1F1917` | títulos y texto principal |
-| `--color-ink-2` | Texto 2 | `#6E655F` | texto secundario, rótulos mono, rótulos de lateralidad |
-| `--color-skin-light` | Piel luz | `#EBD2C0` | brillo difuso de los orbes, anillos en reposo, bordes de la ilustración, luz de la ilustración |
-| `--color-skin-line` | Piel línea | `#C4977E` | líneas guía, contorno de la ilustración, borde del orbe, línea de cita |
-| `--color-wine` | Vino | `#7A1F3D` | acento: botón principal, enlaces, punto central del orbe, lado derecho (exterior) |
-| `--color-wine-dark` | Vino oscuro | `#5C1730` | hover del acento |
-| `--color-rose` | Rosado | `#B4506F` | lado izquierdo (personal): punto central y anillo del orbe, rótulo en la ficha |
-| `--color-correct` | Correcto | `#3F8F63` | solo corrección, siempre con ✓ |
-| `--color-incorrect` | Incorrecto | `#8C8480` | solo corrección, siempre con ✗ |
-| `--color-muted-line` | Línea atenuada | `#D9D2CC` | orbes y líneas de zonas "próximamente" |
-| `--color-muted-text` | Texto atenuado | `#B9B1AB` | subtexto de zonas "próximamente" |
+| Token CSS            | Nombre         | Hex       | Uso                                                                                            |
+| -------------------- | -------------- | --------- | ---------------------------------------------------------------------------------------------- |
+| `--color-bg`         | Fondo          | `#F8F8F7` | fondo general, blanco neutro                                                                   |
+| `--color-surface`    | Superficie     | `#FFFFFF` | ilustración, ficha, opciones, barra inferior                                                   |
+| `--color-ink`        | Tinta          | `#1F1917` | títulos y texto principal                                                                      |
+| `--color-ink-2`      | Texto 2        | `#6E655F` | texto secundario, rótulos mono, rótulos de lateralidad                                         |
+| `--color-skin-light` | Piel luz       | `#EBD2C0` | brillo difuso de los orbes, anillos en reposo, bordes de la ilustración, luz de la ilustración |
+| `--color-skin-line`  | Piel línea     | `#C4977E` | líneas guía, contorno de la ilustración, borde del orbe, línea de cita                         |
+| `--color-wine`       | Vino           | `#7A1F3D` | acento: botón principal, enlaces, punto central del orbe, lado derecho (exterior)              |
+| `--color-wine-dark`  | Vino oscuro    | `#5C1730` | hover del acento                                                                               |
+| `--color-rose`       | Rosado         | `#B4506F` | lado izquierdo (personal): punto central y anillo del orbe, rótulo en la ficha                 |
+| `--color-correct`    | Correcto       | `#3F8F63` | solo corrección, siempre con ✓                                                                 |
+| `--color-incorrect`  | Incorrecto     | `#8C8480` | solo corrección, siempre con ✗                                                                 |
+| `--color-muted-line` | Línea atenuada | `#D9D2CC` | orbes y líneas de zonas "próximamente"                                                         |
+| `--color-muted-text` | Texto atenuado | `#B9B1AB` | subtexto de zonas "próximamente"                                                               |
 
 Regla: el lado se codifica con vino (derecho) y rosado (izquierdo); la línea media va en tinta. El rojo nunca significa error: el fallo es gris con ✗.
 
@@ -28,27 +28,27 @@ Regla: el lado se codifica con vino (derecho) y rosado (izquierdo); la línea me
 
 Familia única Jost (Google Fonts) más IBM Plex Mono para dos rótulos.
 
-| Rol | Fuente | Peso | Tamaño móvil | Notas |
-|---|---|---|---|---|
-| Marca de palabra | Jost | 200 | 44 px | "Micropicores", sin logotipo |
-| Título de pantalla | Jost | 200 | 30 px | "Cuerpo, de frente", "Cara" |
-| Título de práctica | Jost | 200 | 26 px | |
-| Significado (cita del PDF) | Jost | 300 | 19 px / 1.45 | línea de 1 px a la izquierda en Piel línea, sangría 14 px |
-| Cuerpo | Jost | 400 | 16 px / 1.55 | 300 solo desde 18 px |
-| Opción de práctica | Jost | 300 | 15 px / 1.4 | |
-| Etiqueta, botón, navegación | Jost | 400 | 13 a 17 px | |
-| Texto secundario | Jost | 300 | 12 a 15 px | color Texto 2 |
-| Rótulo mono | IBM Plex Mono | 400 | 11 px, tracking 0.12em, mayúsculas | solo cabecera de ficha ("LADO DERECHO · MEJILLA") y contador ("4 DE 12"); la versión "v0.1.0" va en mono pero sin mayúsculas |
+| Rol                         | Fuente        | Peso | Tamaño móvil                       | Notas                                                                                                                        |
+| --------------------------- | ------------- | ---- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Marca de palabra            | Jost          | 200  | 44 px                              | "Micropicores", sin logotipo                                                                                                 |
+| Título de pantalla          | Jost          | 200  | 30 px                              | "Cuerpo, de frente", "Cara"                                                                                                  |
+| Título de práctica          | Jost          | 200  | 26 px                              |                                                                                                                              |
+| Significado (cita del PDF)  | Jost          | 300  | 19 px / 1.45                       | línea de 1 px a la izquierda en Piel línea, sangría 14 px                                                                    |
+| Cuerpo                      | Jost          | 400  | 16 px / 1.55                       | 300 solo desde 18 px                                                                                                         |
+| Opción de práctica          | Jost          | 300  | 15 px / 1.4                        |                                                                                                                              |
+| Etiqueta, botón, navegación | Jost          | 400  | 13 a 17 px                         |                                                                                                                              |
+| Texto secundario            | Jost          | 300  | 12 a 15 px                         | color Texto 2                                                                                                                |
+| Rótulo mono                 | IBM Plex Mono | 400  | 11 px, tracking 0.12em, mayúsculas | solo cabecera de ficha ("LADO DERECHO · MEJILLA") y contador ("4 DE 12"); la versión "v0.1.0" va en mono pero sin mayúsculas |
 
 ## Orbes (marcadores)
 
-| Estado | Diámetro | Detalle |
-|---|---|---|
-| Punto en reposo | 16 px | fondo blanco, borde 1 px Piel línea, brillo `0 0 0 4px` Piel luz al 55 % + `0 0 14px 4px` Piel luz al 90 %, punto central 5 px en el color del lado |
-| Anillo que respira | inset −7 px | borde 1 px Piel línea (rosado en lado izquierdo), escala 1 → 1.4, opacidad 0.65 → 0.1, 3.2 s, desfase distinto por punto |
-| Punto activo | 30 px | borde y anillo fijo en vino, punto central 8 px, sin respiración; el resto de puntos al 45 % y sin animación |
-| Zona en el mapa | 22 px | punto central 6 px vino; línea guía 0.9 px en codo a 45° hasta una etiqueta flotante |
-| Zona "próximamente" | 22 px | borde Línea atenuada, sin brillo, punto central Texto atenuado |
+| Estado              | Diámetro    | Detalle                                                                                                                                             |
+| ------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Punto en reposo     | 16 px       | fondo blanco, borde 1 px Piel línea, brillo `0 0 0 4px` Piel luz al 55 % + `0 0 14px 4px` Piel luz al 90 %, punto central 5 px en el color del lado |
+| Anillo que respira  | inset −7 px | borde 1 px Piel línea (rosado en lado izquierdo), escala 1 → 1.4, opacidad 0.65 → 0.1, 3.2 s, desfase distinto por punto                            |
+| Punto activo        | 30 px       | borde y anillo fijo en vino, punto central 8 px, sin respiración; el resto de puntos al 45 % y sin animación                                        |
+| Zona en el mapa     | 22 px       | punto central 6 px vino; línea guía 0.9 px en codo a 45° hasta una etiqueta flotante                                                                |
+| Zona "próximamente" | 22 px       | borde Línea atenuada, sin brillo, punto central Texto atenuado                                                                                      |
 
 Con `prefers-reduced-motion: reduce` no hay respiración.
 
