@@ -125,6 +125,9 @@ function PracticeSession({ region, catalog }: { region: PracticeRegion; catalog:
           <button type="button" className={styles.primary} onClick={session.restart}>
             {t('practice.repeat')}
           </button>
+          <Link to="/progress" className={styles.link}>
+            {t('progressScreen.link')}
+          </Link>
           <Link to="/practice" className={styles.link}>
             {t('practice.otherRegion')}
           </Link>

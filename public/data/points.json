@@ -116,11 +116,13 @@
     "key": "larynx",
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "center",
-    "x": 50,
-    "y": 75,
+    "x": 49.7,
+    "y": 72.8,
     "radius": 4,
     "meaning": "CON ESI- Me pone nervioso, posición altiva.",
-    "alternativeMeanings": ["ASI- algo escondido me hace dudar"],
+    "alternativeMeanings": [
+      "ASI- algo escondido me hace dudar"
+    ],
     "tags": [],
     "page": 4
   },
@@ -155,8 +157,8 @@
     "key": "neck-base",
     "region": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
     "side": "center",
-    "x": 50,
-    "y": 78,
+    "x": 49.8,
+    "y": 80,
     "radius": 4,
     "meaning": "Tengo muchas ganas de decir lo que no me parece bien.",
     "alternativeMeanings": [],

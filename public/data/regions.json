@@ -4,7 +4,7 @@
     "key": "front-body",
     "name": "Cuerpo, de frente",
     "view": "front",
-    "image": "/img/front-body.png",
+    "image": "/img/front-body.webp",
     "width": 768,
     "height": 1376,
     "mirror": false
@@ -14,7 +14,7 @@
     "key": "face",
     "name": "Cara",
     "view": "front",
-    "image": "/img/face.png",
+    "image": "/img/face.webp",
     "width": 1024,
     "height": 1024,
     "parent": "1d1e7f40-4986-4b2d-8b3f-e522216b7c48",

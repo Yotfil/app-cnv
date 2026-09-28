@@ -8,9 +8,9 @@ Ilustración del mapa: la figura sobre la que se tocan las zonas (cara, y más a
 2. Adjunta como guía de estilo `docs/design/referents/Gemini_Generated_Image_ejaj1eejaj1eejaj.jpeg` (la figura de cuerpo entero). El prompt le pide tomar solo el trazo y la luz, no la página ni los colores.
 3. Pega el prompt de abajo tal cual.
 4. Revisa el resultado con la lista de comprobación. Si algo falla, pide la corrección en una frase corta en inglés sobre la misma imagen, por ejemplo: `Same image, 9:16 portrait, more margin above the head`. Si sale rellena de color piel (pasó en el primer intento, el 28 de septiembre de 2026), esta corrección funcionó: `Same image and same pose, but without the skin fill: keep only the fine skin-tone outline with a very soft glow along the lines, and leave the inside of the figure almost white and airy. Also remove the two curves under the chest.`
-5. Descarga la imagen y guárdala como `public/img/front-body.png`, reemplazando el marcador de posición. Si se descarga en JPG, conviértela:
+5. Descarga la imagen y guárdala en WebP como `public/img/front-body.webp` (sirve igual si Gemini la descarga en JPG o PNG):
    ```
-   sips -s format png ~/Downloads/<archivo>.jpg --out public/img/front-body.png
+   cwebp -q 85 ~/Downloads/<archivo> -o public/img/front-body.webp
    ```
 6. Guarda también la conversación o la imagen original: la usarás como referencia para la cara (`prompts/face.md`).
 

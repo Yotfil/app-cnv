@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { createMemoryRouter, RouterProvider } from 'react-router'
 import { describe, expect, it } from 'vitest'
@@ -73,6 +73,7 @@ describe('MapScreen', () => {
   it('shows a region without illustration as coming soon and does not open it', async () => {
     const user = userEvent.setup()
     openMap()
+    fireEvent.load(screen.getByRole('img', { name: frontBody.name }))
 
     const soon = screen.getByText('Torso')
     expect(soon.closest('[aria-disabled="true"]')).toHaveTextContent('próximamente')

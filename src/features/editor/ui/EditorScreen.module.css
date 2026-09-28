@@ -1,0 +1,232 @@
+/* Development tool: plain, dense and desktop first, but still usable on a phone. */
+
+.screen {
+  box-sizing: border-box;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  margin: 0;
+  font-weight: var(--weight-thin);
+  font-size: var(--size-title-sm);
+}
+
+.changes {
+  margin: 0 0 0 auto;
+  font-family: var(--font-mono);
+  font-size: var(--size-mono);
+  color: var(--color-ink-2);
+}
+
+.layout {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 800px) {
+  .layout {
+    grid-template-columns: minmax(0, 620px) minmax(260px, 1fr);
+    align-items: start;
+  }
+}
+
+.canvas {
+  min-width: 0;
+}
+
+.handle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--color-surface);
+  border-radius: 50%;
+  background: var(--color-wine);
+  box-shadow: 0 0 0 1px var(--color-wine);
+  cursor: grab;
+  touch-action: none;
+}
+
+.handle:active {
+  cursor: grabbing;
+}
+
+.handle[data-selected] {
+  background: var(--color-surface);
+  border-color: var(--color-wine);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-wine) 30%, transparent);
+}
+
+.radius {
+  fill: color-mix(in srgb, var(--color-wine) 6%, transparent);
+  stroke: color-mix(in srgb, var(--color-wine) 45%, transparent);
+  stroke-width: 1px;
+  stroke-dasharray: 3 2;
+}
+
+.radius[data-selected] {
+  fill: color-mix(in srgb, var(--color-wine) 14%, transparent);
+  stroke: var(--color-wine);
+}
+
+.panel {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--color-option-border);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: 0;
+  border-bottom: 1px solid var(--color-option-border);
+  background: none;
+  font: inherit;
+  font-size: var(--size-label);
+  text-align: left;
+  cursor: pointer;
+}
+
+.item[aria-pressed='true'] {
+  background: color-mix(in srgb, var(--color-wine) 8%, transparent);
+  color: var(--color-wine);
+}
+
+.coords {
+  font-family: var(--font-mono);
+  font-size: var(--size-mono);
+  color: var(--color-ink-2);
+}
+
+.detail {
+  padding: var(--space-3);
+  border: 1px solid var(--color-option-border);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+}
+
+.meaning {
+  margin: 0 0 var(--space-3);
+  font-weight: var(--weight-light);
+  font-size: var(--size-label);
+}
+
+.fields {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-1);
+  font-size: var(--size-caption);
+  color: var(--color-ink-2);
+}
+
+.field input,
+.field select {
+  box-sizing: border-box;
+  height: 36px;
+  min-width: 72px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--color-skin-line);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  font: inherit;
+  color: var(--color-ink);
+}
+
+.hint {
+  margin: var(--space-3) 0 0;
+  font-size: var(--size-caption);
+  color: var(--color-ink-2);
+}
+
+.zone {
+  fill: color-mix(in srgb, var(--color-skin-light) 20%, transparent);
+  stroke: color-mix(in srgb, var(--color-skin-line) 60%, transparent);
+  stroke-width: 1px;
+  stroke-dasharray: 3 2;
+}
+
+.zone[data-selected] {
+  fill: color-mix(in srgb, var(--color-wine) 10%, transparent);
+  stroke: var(--color-wine);
+  stroke-dasharray: none;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.button {
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-wine);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  color: var(--color-wine);
+  font: inherit;
+  font-size: var(--size-label);
+  cursor: pointer;
+}
+
+.button:disabled {
+  border-color: var(--color-muted-line);
+  color: var(--color-muted-text);
+  cursor: default;
+}
+
+.exports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* A file without pending changes is shown quietly; one with changes, in wine. */
+.export {
+  min-height: 40px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--color-wine);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  color: var(--color-wine);
+  font: inherit;
+  font-size: var(--size-label);
+  cursor: pointer;
+}
+
+.export[data-pending] {
+  background: var(--color-wine);
+  color: #fff;
+}
+
+.export[data-pending]:hover {
+  background: var(--color-wine-dark);
+}

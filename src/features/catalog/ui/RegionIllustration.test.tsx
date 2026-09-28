@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 import type { Point, Region } from '../domain/model'
@@ -31,9 +31,33 @@ const cheekRight: Point = {
 }
 
 describe('RegionIllustration', () => {
+  it('shows no point until the illustration has loaded', () => {
+    render(<RegionIllustration region={face} points={[cheekRight]} />)
+
+    expect(screen.queryByRole('button', { name: cheekRight.meaning })).not.toBeInTheDocument()
+
+    fireEvent.load(screen.getByRole('img', { name: face.name }))
+
+    expect(screen.getByRole('button', { name: cheekRight.meaning })).toBeInTheDocument()
+  })
+
+  it('stops waiting and offers to retry when the illustration cannot be loaded', async () => {
+    const user = userEvent.setup()
+    render(<RegionIllustration region={face} points={[cheekRight]} />)
+
+    fireEvent.error(screen.getByRole('img', { name: face.name }))
+
+    expect(screen.getByText('No se pudo cargar la ilustración.')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Reintentar' }))
+    expect(screen.queryByText('No se pudo cargar la ilustración.')).not.toBeInTheDocument()
+    fireEvent.load(screen.getByRole('img', { name: face.name }))
+    expect(screen.getByRole('button', { name: cheekRight.meaning })).toBeInTheDocument()
+  })
+
   it('opens the card when a marker is tapped and closes it when tapping outside', async () => {
     const user = userEvent.setup()
     render(<RegionIllustration region={face} points={[cheekRight]} />)
+    fireEvent.load(screen.getByRole('img', { name: face.name }))
     const marker = screen.getByRole('button', { name: cheekRight.meaning })
 
     await user.pointer({ keys: '[TouchA]', target: marker })

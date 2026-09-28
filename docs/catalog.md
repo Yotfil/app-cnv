@@ -8,7 +8,7 @@ Cómo está hecho el catálogo y cómo se añade un micropicor o una región. Fu
 | -------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `public/data/regions.json`             | Lista de regiones: cada ilustración y su lugar en el cuerpo                               |
 | `public/data/points.json`              | Lista de micropicores (en el código, **puntos**)                                          |
-| `public/img/<key>.png`                 | Ilustración de cada región, con el nombre de su `key`                                     |
+| `public/img/<key>.webp`                | Ilustración de cada región, con el nombre de su `key`                                     |
 | `src/features/catalog/domain/model.ts` | Tipos `Region` y `Point`: la definición exacta de cada campo                              |
 | `src/test/fixtures/pdf-text.json`      | Texto extraído de cada lámina usada, para comprobar que el catálogo es literal            |
 | `src/test/catalog-content.test.ts`     | Test que compara cada significado con el texto de su lámina y lista las erratas aceptadas |
@@ -31,17 +31,17 @@ Regiones con `mirror: true` (la oreja, en el futuro) usan la misma imagen voltea
 
 ### Región
 
-| Campo             | Obligatorio | Qué es                                                                                                                       |
-| ----------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `id`              | sí          | UUID v4 generado con `npm run new-id`. No cambia nunca                                                                       |
-| `key`             | sí          | Slug en inglés, minúsculas y guiones, único (`face`, `front-torso`). Va en la URL                                            |
-| `name`            | sí          | Nombre en español para la interfaz ("Cara")                                                                                  |
-| `view`            | sí          | `front`, `back` o `side`                                                                                                     |
-| `image`           | no          | Ruta de la ilustración (`/img/face.png`). Si se omite, la región aparece en el mapa atenuada con "próximamente" y no se abre |
-| `width`, `height` | sí          | Tamaño real del PNG en píxeles; fija la proporción de la ilustración                                                         |
-| `parent`          | no          | `id` de la región de cuerpo entero desde la que se abre. Sin `parent`, la región es un mapa                                  |
-| `zone`            | no          | Polígono en porcentaje sobre la imagen del `parent` que abre esta región                                                     |
-| `mirror`          | sí          | `true` solo si la imagen se usa volteada para el lado contrario                                                              |
+| Campo             | Obligatorio | Qué es                                                                                                                        |
+| ----------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `id`              | sí          | UUID v4 generado con `npm run new-id`. No cambia nunca                                                                        |
+| `key`             | sí          | Slug en inglés, minúsculas y guiones, único (`face`, `front-torso`). Va en la URL                                             |
+| `name`            | sí          | Nombre en español para la interfaz ("Cara")                                                                                   |
+| `view`            | sí          | `front`, `back` o `side`                                                                                                      |
+| `image`           | no          | Ruta de la ilustración (`/img/face.webp`). Si se omite, la región aparece en el mapa atenuada con "próximamente" y no se abre |
+| `width`, `height` | sí          | Tamaño real del PNG en píxeles; fija la proporción de la ilustración                                                          |
+| `parent`          | no          | `id` de la región de cuerpo entero desde la que se abre. Sin `parent`, la región es un mapa                                   |
+| `zone`            | no          | Polígono en porcentaje sobre la imagen del `parent` que abre esta región                                                      |
+| `mirror`          | sí          | `true` solo si la imagen se usa volteada para el lado contrario                                                               |
 
 ### Punto
 
@@ -111,7 +111,10 @@ Requisito: la región ya existe en `regions.json` con su ilustración. Si no, pr
 
 ## Añadir una región
 
-1. Generar la ilustración con el prompt de `prompts/<key>.md` y guardarla en `public/img/<key>.png`.
+1. Generar la ilustración con el prompt de `prompts/<key>.md` y guardarla en WebP, que pesa unas 15 veces menos que PNG y hace que la ilustración aparezca antes en el móvil:
+   ```
+   cwebp -q 85 ~/Downloads/<archivo descargado> -o public/img/<key>.webp
+   ```
 2. `npm run new-id` para su `id`.
 3. Añadirla a `public/data/regions.json` con `width` y `height` reales del PNG y, si se abre desde un mapa, `parent` y una `zone` aproximada.
 4. Ajustar la `zone` en el editor, sobre el mapa.

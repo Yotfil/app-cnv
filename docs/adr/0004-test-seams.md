@@ -15,6 +15,7 @@ TDD estricto (rojo, verde, un test y una implementación por ciclo, cortes verti
 3. `createSession(regionKey, catalog, random)`: sin repetición, avance, resumen.
 4. `recordAnswer(pointId, mode, hit)` y `clearProgress()` sobre un `Store` en memoria: acierto, fallo, recarga, borrado. El puerto `Store` tiene `read`, `write` y `clear` (este último añadido el 28 de septiembre de 2026 con el usuario: borrar el progreso elimina el documento y el dispositivo vuelve a ser una primera visita).
 5. `exportCatalog(regions, points)`: exportar sin cambios produce archivos idénticos.
+6. `summarizeProgress(progress, points)` (añadido el 28 de septiembre de 2026 con el usuario, para la pantalla "Tu progreso"): micropicores sin practicar, micropicores que ya no están en el catálogo, recuento "practicados X de N" por región y orden del catálogo.
 
 En UI, React Testing Library solo para los escenarios de interacción que las specs describen (la ficha se abre al tocar y se cierra al tocar fuera; zona atenuada no navega; elegir opción muestra corrección; primera visita bloquea y segunda no). Nada de tests de "se renderiza"; la única excepción es `src/test/smoke.test.ts`, que comprueba que Vitest, jsdom y Testing Library están bien conectados. Playwright cuando haya más de una región.
 

@@ -41,3 +41,23 @@ La app SHALL ofrecer en la pantalla inicial una acción para borrar alias y prog
 #### Scenario: Borrar progreso
 - **WHEN** la persona confirma el borrado
 - **THEN** el documento local desaparece y la app vuelve al estado de primera visita
+
+### Requirement: Ver el propio progreso
+La app SHALL ofrecer una pantalla "Tu progreso", accesible desde la barra inferior, desde la portada y desde el resultado de la práctica, que muestre por cada región con micropicores cuántos se han practicado ("practicados 7 de 11") y, por cada micropicor en el orden del catálogo, su lado, su significado, sus aciertos, sus fallos y la fecha del último intento, o "sin practicar". En esta fase solo se muestran los datos: no se calcula ningún estado de dominio ni se reordena por fallos.
+
+#### Scenario: Progreso con respuestas
+- **WHEN** la persona ha respondido 7 de los 11 micropicores de la cara
+- **THEN** la pantalla muestra "Cara · practicados 7 de 11", los 11 micropicores en el orden del catálogo con sus aciertos, fallos y fecha, y los otros 4 como "sin practicar"
+
+#### Scenario: Sin práctica todavía
+- **WHEN** la persona aún no ha respondido ninguna pregunta
+- **THEN** la pantalla muestra todos los micropicores como "sin practicar" y un aviso con enlace a la práctica
+
+#### Scenario: Ficha desde el progreso
+- **WHEN** la persona toca un micropicor de la lista
+- **THEN** se abre su ficha completa
+
+#### Scenario: Micropicor retirado del catálogo
+- **WHEN** el progreso guardado menciona un micropicor que ya no está en el catálogo
+- **THEN** la pantalla lo ignora y el dato se conserva en el dispositivo
+

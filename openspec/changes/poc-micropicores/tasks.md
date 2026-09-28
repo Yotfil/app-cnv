@@ -39,6 +39,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 - [x] 4.4 `shared/ui/SideLabels` con "Derecha de la persona" a la izquierda y "Izquierda de la persona" a la derecha, textos desde `es.json`; verificar que se mantiene visible en 360 px de ancho
 - [x] 4.5 `catalog/ui/PointCard` con nombre de zona, lado en palabras, significado, alternativos con "también", gesto y etiquetas; panel inferior en táctil y tarjeta junto al marcador con puntero; test de Testing Library para "toque abre la ficha y tocar fuera la cierra"; verificar en Chrome escritorio (hover) y en emulación móvil
 - [x] 4.6 `catalog/ui/RegionScreen` en ruta `/region/:key` que carga el catálogo por `useCatalog`, aplica el filtro (sin controles) y compone los componentes anteriores; verificar que todos los puntos de `face` se muestran y que la URL directa funciona con botón de volver al mapa
+- [x] 4.7 (añadida el 28 de septiembre de 2026, a petición del usuario: la ilustración tardaba en aparecer y los micropicores se veían sobre un hueco) Convertir las ilustraciones a WebP (de unos 300 KB a unos 20 KB) y actualizar `regions.json`, `docs/catalog.md` y los prompts; en `shared/ui/Illustration`, fondo de espera con la proporción de la imagen y sin capas de micropicores ni zonas hasta el evento `load`; test de Testing Library para "Ilustración cargando"; verificar en Chrome con red lenta simulada
 
 ## 5. Inicio y mapa
 
@@ -59,13 +60,14 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 - [x] 7.1 TDD sobre `progress/domain/progress.ts` con `Store` inyectable, documento versionado `micropicores.progress.v1` con `userId` nulo, `recordAnswer(pointId, mode, hit)` y `clearProgress()`; tests con almacén en memoria para acierto, fallo, recarga y borrado
 - [x] 7.2 `shared/lib/storage/localStorageStore.ts` con try/catch, cambio a memoria si falla y aviso único; verificar en Chrome con almacenamiento bloqueado que la práctica sigue y aparece el aviso
 - [x] 7.3 `progress/ui/useProgress` conectado a la práctica y alias visible en la pantalla de práctica; verificar que tras recargar los contadores del punto se conservan
+- [x] 7.4 (añadida el 28 de septiembre de 2026, a petición del usuario; se hace tras la 8.4) Pantalla "Tu progreso" en `/progress`: TDD sobre el nuevo seam `progress/domain/summary.ts` `summarizeProgress(progress, points)` (anotado en ADR 0004) con casos de micropicores sin practicar, micropicores que ya no están en el catálogo y recuento "practicados X de N"; cuarto botón "Progreso" en la barra y enlaces "Ver mi progreso" en la portada y en el resultado de la práctica; lista por región en orden del catálogo con lado, significado, aciertos, fallos y fecha o "sin practicar", aviso con enlace a Practicar si no hay respuestas, ficha al tocar un micropicor; verificar en emulación móvil tras una sesión de práctica que los números coinciden con lo respondido
 
 ## 8. Editor de posiciones
 
-- [ ] 8.1 `editor/ui/EditorScreen` en `/editor` (sin enlace) con selector de región, lista lateral de puntos por `key`, arrastre de marcadores en porcentaje y edición de `radius` con círculo visible; verificar arrastrando `glabella` y comprobando que el porcentaje cambia
-- [ ] 8.2 Edición de vértices del polígono `zone` de las regiones hijas sobre el mapa; verificar que la zona de `face` se ajusta a la ilustración real
-- [ ] 8.3 TDD sobre `editor/domain/export.ts`: `exportCatalog(regions, points)` devuelve ambos JSON completos con ids y orden originales; test de que exportar sin cambios produce archivos idénticos a los cargados
-- [ ] 8.4 Documentar en `docs/editor.md` el flujo "abrir /editor, ajustar, exportar, copiar a public/data, commit, push"; verificar que el usuario lo completa una vez con la cara (requiere imagen)
+- [x] 8.1 `editor/ui/EditorScreen` en `/editor` (sin enlace) con selector de región, lista lateral de puntos por `key`, arrastre de marcadores en porcentaje y edición de `radius` con círculo visible; verificar arrastrando `glabella` y comprobando que el porcentaje cambia
+- [x] 8.2 Edición de vértices del polígono `zone` de las regiones hijas sobre el mapa; verificar que la zona de `face` se ajusta a la ilustración real
+- [x] 8.3 TDD sobre `editor/domain/export.ts`: `exportCatalog(regions, points)` devuelve ambos JSON completos con ids y orden originales; test de que exportar sin cambios produce archivos idénticos a los cargados
+- [x] 8.4 Documentar en `docs/editor.md` el flujo "abrir /editor, ajustar, exportar, copiar a public/data, commit, push"; verificar que el usuario lo completa una vez con la cara (requiere imagen)
 
 ## 9. Integración y cierre del POC
 

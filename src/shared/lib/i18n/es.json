@@ -47,7 +47,8 @@
     "label": "Navegación principal",
     "study": "Estudiar",
     "practice": "Practicar",
-    "home": "Inicio"
+    "home": "Inicio",
+    "progress": "Progreso"
   },
   "notFound": {
     "title": "Esta página no existe",
@@ -96,5 +97,41 @@
     "notAvailable": "Esta región todavía no se puede practicar.",
     "alias": "Practicando como {{alias}}",
     "notSaved": "Este navegador no deja guardar datos (quizá estás en una ventana privada): tu progreso de hoy se perderá al cerrar la app."
+  },
+  "editor": {
+    "title": "Editor de posiciones",
+    "region": "Región",
+    "points": "Micropicores de la región",
+    "coords": "{{x}}, {{y}}",
+    "radius": "radio",
+    "changes_one": "{{count}} cambio sin exportar",
+    "changes_other": "{{count}} cambios sin exportar",
+    "hint": "Arrastra el marcador o usa las flechas del teclado (0,5 %). El círculo es el área de acierto.",
+    "zones": "Zonas del mapa",
+    "corner": "Vértice {{number}}",
+    "cornerX": "x del vértice {{number}}",
+    "cornerY": "y del vértice {{number}}",
+    "corners_one": "{{count}} vértice",
+    "corners_other": "{{count}} vértices",
+    "noZone": "sin zona",
+    "createZone": "Crear zona",
+    "addCorner": "Añadir vértice",
+    "removeCorner": "Quitar vértice",
+    "zoneHint": "Arrastra cada vértice o usa las flechas del teclado (0,5 %). \"Añadir vértice\" lo pone a mitad del lado que sale del vértice elegido.",
+    "exportFile_one": "Descargar {{file}} · {{count}} cambio",
+    "exportFile_other": "Descargar {{file}} · {{count}} cambios"
+  },
+  "illustration": {
+    "failed": "No se pudo cargar la ilustración.",
+    "retry": "Reintentar"
+  },
+  "progressScreen": {
+    "title": "Tu progreso",
+    "empty": "Aún no has practicado.",
+    "goPractice": "Empieza en Practicar.",
+    "practiced": "practicados {{practiced}} de {{total}}",
+    "stats": "{{hits}} · {{misses}} · {{date}}",
+    "notPracticed": "sin practicar",
+    "link": "Ver mi progreso"
   }
 }
