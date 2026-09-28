@@ -26,6 +26,10 @@ export default defineConfig([
     settings: {
       react: { version: 'detect' },
     },
+    rules: {
+      // Visible text lives in src/shared/lib/i18n/es.json and is read with t().
+      'react/jsx-no-literals': ['error', { noStrings: true, ignoreProps: true }],
+    },
   },
   // Must stay last: turns off rules that conflict with Prettier.
   prettier,

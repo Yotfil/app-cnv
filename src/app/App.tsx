@@ -1,5 +1,8 @@
+import { useTranslation } from 'react-i18next'
+
 function App() {
-  return <h1>Micropicores</h1>
+  const { t } = useTranslation()
+  return <h1>{t('app.title')}</h1>
 }
 
 export default App
