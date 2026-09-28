@@ -40,5 +40,14 @@
     "loading": "Cargando…",
     "loadError": "No se pudo cargar el catálogo. Revisa la conexión y recarga la página.",
     "notFound": "Esta región no existe."
+  },
+  "nav": {
+    "label": "Navegación principal",
+    "study": "Estudiar",
+    "practice": "Practicar"
+  },
+  "notFound": {
+    "title": "Esta página no existe",
+    "message": "Usa la barra de abajo para volver a estudiar."
   }
 }
