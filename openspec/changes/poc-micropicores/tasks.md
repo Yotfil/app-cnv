@@ -29,7 +29,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 
 - [x] 3.1 Escribir `prompts/front-body.md` en inglés según D9: figura neutra de línea fina en tono piel con luz difusa, sin relleno pleno, sin sexo, sin ropa, sin pelo, tono de piel medio neutro, fondo blanco, frontal, 9:16, brazos ligeramente separados; con `docs/design/referents/` como guía de estilo (no copiar), prompt negativo y lista de comprobación; verificar que el usuario lo ejecuta en la web de Gemini y guarda `public/img/front-body.png` (requiere imagen)
 - [x] 3.2 Escribir `prompts/face.md` con el prompt de recorte de cabeza y cuello usando el cuerpo entero como referencia, formato 1:1, y lista de comprobación (orejas, mentón y base del cuello visibles); verificar que el usuario guarda `public/img/face.png` (requiere imagen)
-- [ ] 3.3 Actualizar `width` y `height` de ambas regiones en `regions.json` con las dimensiones reales de los PNG; verificar que la ilustración se muestra sin deformación en la vista de región (requiere imagen)
+- [x] 3.3 Actualizar `width` y `height` de ambas regiones en `regions.json` con las dimensiones reales de los PNG; verificar que la ilustración se muestra sin deformación en la vista de región (requiere imagen)
 
 ## 4. Componentes de ilustración y vista de región
 
@@ -38,7 +38,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 - [x] 4.3 `shared/ui/Arrow` que dibuja una flecha entre dos coordenadas en porcentaje; verificar con la flecha mejilla → mentón de la cara
 - [x] 4.4 `shared/ui/SideLabels` con "Derecha de la persona" a la izquierda y "Izquierda de la persona" a la derecha, textos desde `es.json`; verificar que se mantiene visible en 360 px de ancho
 - [x] 4.5 `catalog/ui/PointCard` con nombre de zona, lado en palabras, significado, alternativos con "también", gesto y etiquetas; panel inferior en táctil y tarjeta junto al marcador con puntero; test de Testing Library para "toque abre la ficha y tocar fuera la cierra"; verificar en Chrome escritorio (hover) y en emulación móvil
-- [ ] 4.6 `catalog/ui/RegionScreen` en ruta `/region/:key` que carga el catálogo por `useCatalog`, aplica el filtro (sin controles) y compone los componentes anteriores; verificar que todos los puntos de `face` se muestran y que la URL directa funciona con botón de volver al mapa
+- [x] 4.6 `catalog/ui/RegionScreen` en ruta `/region/:key` que carga el catálogo por `useCatalog`, aplica el filtro (sin controles) y compone los componentes anteriores; verificar que todos los puntos de `face` se muestran y que la URL directa funciona con botón de volver al mapa
 
 ## 5. Inicio y mapa
 
