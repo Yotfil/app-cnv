@@ -13,7 +13,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 - [x] 1.7 (explicar) Crear `.github/workflows/ci.yml` que ejecute `npm ci`, `tsc --noEmit`, lint y tests en cada PR y push a `main`; verificar que el workflow pasa en GitHub en el primer PR
 - [x] 1.8 (explicar) Configurar Netlify (build `npm run build`, publish `dist`, `public/_redirects` con `/* /index.html 200`) con previsualización por PR; verificar que la URL de previsualización del PR muestra la app y que una ruta profunda recargada no da 404
 - [x] 1.9 (explicar) Configurar release-please en Actions y la protección de `main` (solo merge commit, Actions en verde requerido); verificar que tras fusionar el primer commit `feat` release-please abre el PR de versión `v0.1.0`
-- [ ] 1.10 Añadir `manifest.webmanifest` con nombre, colores e icono provisional y mostrar la versión de `package.json` en la app; verificar que Chrome en Android ofrece "Añadir a pantalla de inicio" y que se lee "v0.1.0"
+- [x] 1.10 Añadir `manifest.webmanifest` con nombre, colores e icono provisional y mostrar la versión de `package.json` en la app; verificar que Chrome en Android ofrece "Añadir a pantalla de inicio" y que se lee "v0.1.0"
 - [ ] 1.11 Revisar `CONTEXT.md`, los ADRs 0001 a 0004 y `docs/workflow.md` (creados en la sesión de diseño) contra lo implementado en el grupo 1 y ajustar lo que difiera; verificar que el usuario sigue `docs/workflow.md` para abrir el primer PR sin ayuda
 
 ## 2. Modelo y catálogo
