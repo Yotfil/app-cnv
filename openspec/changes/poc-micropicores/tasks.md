@@ -19,7 +19,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 ## 2. Modelo y catálogo
 
 - [x] 2.1 Escribir `src/features/catalog/domain/model.ts` con los tipos `Region`, `Point`, `Side`, `Tag` y `src/features/progress/domain/model.ts` con `Progress` y `Store`, según las specs de catalogo-puntos y progreso-local; verificar que `tsc --noEmit` pasa
-- [ ] 2.2 TDD sobre `loadCatalog(source)` en `catalog.ts`: tests para catálogo válido, punto con región inexistente y región de cuerpo entero sin puntos; verificar que los tres pasan en rojo-verde
+- [x] 2.2 TDD sobre `loadCatalog(source)` en `catalog.ts`: tests para catálogo válido, punto con región inexistente y región de cuerpo entero sin puntos; verificar que los tres pasan en rojo-verde
 - [ ] 2.3 Escribir `scripts/new-id.ts` que genera UUID v4 y `src/shared/lib/uuid.ts`; verificar que dos ejecuciones producen ids distintos con formato válido
 - [ ] 2.4 Crear `public/data/regions.json` con `front-body` y `face` (ids UUID, `zone` provisional de la cara como rectángulo en porcentaje, `image` apuntando a marcador de posición) y verificar que `loadCatalog` lo acepta
 - [ ] 2.5 Transcribir a `public/data/points.json` los puntos de las láminas 3, 4 y 13 del PDF (frente ×3, entrecejo, mejilla izquierda, mejilla derecha, bajo el labio "Duda", laringe "CON ESI / ASI", y los 3 de la lámina 13 de cuello y mentón), con `side`, `page`, `muscle` cuando el PDF lo nombra, la `arrow` mejilla → mentón, coordenadas propuestas a partir del render del PDF y `radius` por defecto 4; verificar con un test que cada `meaning` coincide carácter a carácter con el texto extraído del PDF salvo erratas listadas
