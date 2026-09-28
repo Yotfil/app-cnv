@@ -61,15 +61,21 @@ function Editor({ catalog }: { catalog: Catalog }) {
       editable[0]?.key,
   )
 
-  // Changes are counted against the last export (at first, the loaded catalog).
-  const [baseline, setBaseline] = useState({ points: catalog.points, regions: catalog.regions })
-  const changed = countChanges(points, baseline.points) + countChanges(regions, baseline.regions)
+  // Changes are counted per file against its last export (at first, the loaded catalog).
+  const [exportedPoints, setExportedPoints] = useState(catalog.points)
+  const [exportedRegions, setExportedRegions] = useState(catalog.regions)
+  const pointChanges = countChanges(points, exportedPoints)
+  const regionChanges = countChanges(regions, exportedRegions)
+  const changed = pointChanges + regionChanges
 
-  const onExport = () => {
-    const files = exportCatalog(regions, points)
-    download('regions.json', files.regions)
-    download('points.json', files.points)
-    setBaseline({ points, regions })
+  // One file per click: browsers block a second download started by the same click.
+  const exportPoints = () => {
+    download('points.json', exportCatalog(regions, points).points)
+    setExportedPoints(points)
+  }
+  const exportRegions = () => {
+    download('regions.json', exportCatalog(regions, points).regions)
+    setExportedRegions(regions)
   }
 
   // Leaving the page would lose the adjustments that are not exported yet.
@@ -101,9 +107,24 @@ function Editor({ catalog }: { catalog: Catalog }) {
         <p className={styles.changes} role="status">
           {t('editor.changes', { count: changed })}
         </p>
-        <button type="button" className={styles.export} onClick={onExport}>
-          {t('editor.export')}
-        </button>
+        <div className={styles.exports}>
+          <button
+            type="button"
+            className={styles.export}
+            data-pending={pointChanges > 0 || undefined}
+            onClick={exportPoints}
+          >
+            {t('editor.exportFile', { file: 'points.json', count: pointChanges })}
+          </button>
+          <button
+            type="button"
+            className={styles.export}
+            data-pending={regionChanges > 0 || undefined}
+            onClick={exportRegions}
+          >
+            {t('editor.exportFile', { file: 'regions.json', count: regionChanges })}
+          </button>
+        </div>
       </header>
 
       {children.length > 0 ? (

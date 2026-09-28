@@ -117,7 +117,8 @@
     "addCorner": "Añadir vértice",
     "removeCorner": "Quitar vértice",
     "zoneHint": "Arrastra cada vértice o usa las flechas del teclado (0,5 %). \"Añadir vértice\" lo pone a mitad del lado que sale del vértice elegido.",
-    "export": "Exportar"
+    "exportFile_one": "Descargar {{file}} · {{count}} cambio",
+    "exportFile_other": "Descargar {{file}} · {{count}} cambios"
   },
   "illustration": {
     "failed": "No se pudo cargar la ilustración.",

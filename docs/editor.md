@@ -45,22 +45,28 @@ La zona debe cubrir la parte del cuerpo que abre la región (para la cara: cabez
 
 ### 4. Exportar
 
-Arriba a la derecha verás "N cambios sin exportar". Pulsa **Exportar**.
+Arriba a la derecha hay un botón por archivo, con los cambios que tiene pendientes:
 
-- Se descargan dos archivos: `regions.json` y `points.json`, normalmente en `~/Downloads`.
-- La primera vez Chrome puede preguntar si el sitio puede **descargar varios archivos**: acepta.
-- El contador vuelve a 0: desde ahora cuenta los cambios respecto a lo exportado.
-- Si cierras o recargas con cambios sin exportar, el navegador avisa: esos cambios se perderían.
+- **Descargar points.json**: las posiciones, radios y flechas de los **micropicores**.
+- **Descargar regions.json**: las **zonas** del mapa (y el resto de datos de las regiones).
+
+El botón de un archivo con cambios se ve relleno en vino; descarga solo los que lo estén. Cada clic baja un archivo a `~/Downloads` y deja su contador en 0. Son dos botones porque el navegador bloquea en silencio la segunda descarga si un solo clic intenta bajar dos archivos.
+
+Si cierras o recargas con cambios sin descargar, el navegador avisa: esos cambios se perderían.
 
 ### 5. Copiar los archivos al repositorio
 
 Desde la carpeta del proyecto:
 
+Mueve solo los archivos que descargaste:
+
 ```
-mv ~/Downloads/regions.json public/data/regions.json
-mv ~/Downloads/points.json public/data/points.json
+mv ~/Downloads/points.json public/data/points.json      # si ajustaste micropicores
+mv ~/Downloads/regions.json public/data/regions.json    # si ajustaste zonas
 git diff --stat public/data
 ```
+
+Usa `mv` con el nombre exacto de destino: en `public/data/` solo deben existir `points.json` y `regions.json`.
 
 Si en `~/Downloads` ya había archivos con esos nombres, Chrome guarda los nuevos como `points (1).json`: usa el más reciente (`ls -lt ~/Downloads | head`).
 
