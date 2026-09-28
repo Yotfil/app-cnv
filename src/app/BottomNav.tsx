@@ -24,13 +24,12 @@ export function BottomNav() {
         </svg>
         {t('nav.study')}
       </NavLink>
-      {/* Practice arrives in task 6.3. */}
-      <span className={styles.item} aria-disabled="true" data-disabled>
+      <NavLink to="/practice" className={styles.item}>
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden>
           <path d="M8 5.5v13l10-6.5z" />
         </svg>
         {t('nav.practice')}
-      </span>
+      </NavLink>
     </nav>
   )
 }

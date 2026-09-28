@@ -33,7 +33,8 @@
       "external": "Exterior",
       "micro-caress": "Microcaricia",
       "inner-side": "Cara interna"
-    }
+    },
+    "label": "Ficha del micropicor"
   },
   "regionScreen": {
     "backToMap": "Mapa",
@@ -71,5 +72,27 @@
     "count_one": "{{count}} micropicor",
     "count_other": "{{count}} micropicores",
     "soon": "próximamente"
+  },
+  "practice": {
+    "pickTitle": "Practicar",
+    "pickLead": "Elige una región para practicar.",
+    "title": "¿Qué significa?",
+    "progress": "{{position}} de {{total}}",
+    "markerLabel": "Micropicor a identificar",
+    "correct": "Correcta",
+    "incorrect": "Tu elección",
+    "right": "Acertaste",
+    "wrong": "No era ese.",
+    "next": "Siguiente",
+    "seeResult": "Ver resultado",
+    "resultTitle": "Resultado",
+    "result": "{{hits}} · {{misses}}",
+    "hits_one": "{{count}} acierto",
+    "hits_other": "{{count}} aciertos",
+    "misses_one": "{{count}} fallo",
+    "misses_other": "{{count}} fallos",
+    "repeat": "Repetir",
+    "otherRegion": "Elegir otra región",
+    "notAvailable": "Esta región todavía no se puede practicar."
   }
 }

@@ -7,8 +7,11 @@ type Props = {
   point: Point
   /** Name of the region the point belongs to, shown in the header ("Cara"). */
   regionName: string
-  /** sheet: bottom panel on touch screens · floating: card next to the marker with a pointer. */
-  variant: 'sheet' | 'floating'
+  /**
+   * sheet: bottom panel on touch screens · floating: card next to the marker with a pointer ·
+   * inline: part of the page flow (after answering in practice).
+   */
+  variant: 'sheet' | 'floating' | 'inline'
   onClose?: () => void
 }
 
@@ -27,8 +30,8 @@ export function PointCard({ point, regionName, variant, onClose }: Props) {
 
   return (
     <section
-      role="dialog"
-      aria-label={t(`pointCard.sidePerson.${point.side}`)}
+      role={variant === 'inline' ? 'region' : 'dialog'}
+      aria-label={t('pointCard.label')}
       className={styles.card}
       data-variant={variant}
       data-tone={point.side}
