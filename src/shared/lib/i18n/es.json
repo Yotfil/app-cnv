@@ -39,7 +39,8 @@
     "backToMap": "Mapa",
     "loading": "Cargando…",
     "loadError": "No se pudo cargar el catálogo. Revisa la conexión y recarga la página.",
-    "notFound": "Esta región no existe."
+    "notFound": "Esta región no existe.",
+    "comingSoon": "Esta región todavía no tiene ilustración. Llegará próximamente."
   },
   "nav": {
     "label": "Navegación principal",
@@ -68,6 +69,7 @@
   },
   "map": {
     "count_one": "{{count}} micropicor",
-    "count_other": "{{count}} micropicores"
+    "count_other": "{{count}} micropicores",
+    "soon": "próximamente"
   }
 }

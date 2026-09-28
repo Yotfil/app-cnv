@@ -4,8 +4,11 @@ import styles from './Orb.module.css'
 /** Colour of the centre: wine for the person's right side, rose for the left, soft ink for the midline. */
 export type OrbTone = 'right' | 'left' | 'center'
 
-/** rest: breathing orb · active: selected or highlighted, larger and still · dimmed: the rest while one is active. */
-export type OrbState = 'rest' | 'active' | 'dimmed'
+/**
+ * rest: breathing orb · active: selected or highlighted, larger and still · dimmed: the
+ * rest while one is active · muted: not available yet ("coming soon").
+ */
+export type OrbState = 'rest' | 'active' | 'dimmed' | 'muted'
 
 type Props = {
   tone: OrbTone

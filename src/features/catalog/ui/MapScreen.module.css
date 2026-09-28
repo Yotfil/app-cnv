@@ -98,3 +98,23 @@
   font-size: var(--size-caption);
   color: var(--color-ink-2);
 }
+
+/* Coming soon: muted tones, no highlight, not clickable. */
+.area[data-muted] {
+  fill: transparent;
+  stroke: var(--color-muted-line);
+  stroke-dasharray: 3 3;
+}
+
+.zone[data-muted] {
+  cursor: default;
+}
+
+.zone[data-muted] .guide {
+  stroke: var(--color-muted-line);
+}
+
+.zone[data-muted] .name,
+.zone[data-muted] .count {
+  color: var(--color-muted-text);
+}

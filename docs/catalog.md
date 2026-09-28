@@ -31,17 +31,17 @@ Regiones con `mirror: true` (la oreja, en el futuro) usan la misma imagen voltea
 
 ### Región
 
-| Campo             | Obligatorio | Qué es                                                                                      |
-| ----------------- | ----------- | ------------------------------------------------------------------------------------------- |
-| `id`              | sí          | UUID v4 generado con `npm run new-id`. No cambia nunca                                      |
-| `key`             | sí          | Slug en inglés, minúsculas y guiones, único (`face`, `front-torso`). Va en la URL           |
-| `name`            | sí          | Nombre en español para la interfaz ("Cara")                                                 |
-| `view`            | sí          | `front`, `back` o `side`                                                                    |
-| `image`           | sí          | Ruta de la ilustración (`/img/face.png`)                                                    |
-| `width`, `height` | sí          | Tamaño real del PNG en píxeles; fija la proporción de la ilustración                        |
-| `parent`          | no          | `id` de la región de cuerpo entero desde la que se abre. Sin `parent`, la región es un mapa |
-| `zone`            | no          | Polígono en porcentaje sobre la imagen del `parent` que abre esta región                    |
-| `mirror`          | sí          | `true` solo si la imagen se usa volteada para el lado contrario                             |
+| Campo             | Obligatorio | Qué es                                                                                                                       |
+| ----------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `id`              | sí          | UUID v4 generado con `npm run new-id`. No cambia nunca                                                                       |
+| `key`             | sí          | Slug en inglés, minúsculas y guiones, único (`face`, `front-torso`). Va en la URL                                            |
+| `name`            | sí          | Nombre en español para la interfaz ("Cara")                                                                                  |
+| `view`            | sí          | `front`, `back` o `side`                                                                                                     |
+| `image`           | no          | Ruta de la ilustración (`/img/face.png`). Si se omite, la región aparece en el mapa atenuada con "próximamente" y no se abre |
+| `width`, `height` | sí          | Tamaño real del PNG en píxeles; fija la proporción de la ilustración                                                         |
+| `parent`          | no          | `id` de la región de cuerpo entero desde la que se abre. Sin `parent`, la región es un mapa                                  |
+| `zone`            | no          | Polígono en porcentaje sobre la imagen del `parent` que abre esta región                                                     |
+| `mirror`          | sí          | `true` solo si la imagen se usa volteada para el lado contrario                                                              |
 
 ### Punto
 

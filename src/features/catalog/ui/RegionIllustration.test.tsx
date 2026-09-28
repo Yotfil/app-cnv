@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 import type { Point, Region } from '../domain/model'
 import { RegionIllustration } from './RegionIllustration'
 
-const face: Region = {
+const face: Region & { image: string } = {
   id: 'ccc312f7-a916-4eb8-92dd-e8ad201454eb',
   key: 'face',
   name: 'Cara',

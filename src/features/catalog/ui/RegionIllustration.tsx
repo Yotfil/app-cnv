@@ -7,7 +7,8 @@ import type { Point, Region } from '../domain/model'
 import { PointCard } from './PointCard'
 
 type Props = {
-  region: Region
+  /** Only regions that already have their illustration. */
+  region: Region & { image: string }
   points: Point[]
 }
 
