@@ -1,0 +1,87 @@
+/* Design tokens. Source of truth: docs/design/tokens.md */
+:root {
+  /* Color */
+  --color-bg: #f8f8f7;
+  --color-surface: #ffffff;
+  --color-ink: #1f1917;
+  --color-ink-2: #6e655f;
+  --color-skin-light: #ebd2c0;
+  --color-skin-line: #c4977e;
+  --color-wine: #7a1f3d;
+  --color-wine-dark: #5c1730;
+  --color-rose: #b4506f;
+  --color-correct: #3f8f63;
+  --color-incorrect: #8c8480;
+  --color-muted-line: #d9d2cc;
+  --color-muted-text: #b9b1ab;
+  --color-option-border: #e6ded8;
+
+  /* Side encoding */
+  --color-side-right: var(--color-wine);
+  --color-side-left: var(--color-rose);
+  --color-side-center: var(--color-ink);
+
+  /* Type */
+  --font-sans: 'Jost', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --weight-thin: 200;
+  --weight-light: 300;
+  --weight-regular: 400;
+  --size-wordmark: 44px;
+  --size-title: 30px;
+  --size-title-sm: 26px;
+  --size-quote: 19px;
+  --size-body: 16px;
+  --size-option: 15px;
+  --size-label: 13px;
+  --size-caption: 12px;
+  --size-mono: 11px;
+  --tracking-mono: 0.12em;
+
+  /* Orbs */
+  --orb-rest: 16px;
+  --orb-active: 30px;
+  --orb-zone: 22px;
+  --orb-breathe-duration: 3.2s;
+
+  /* Layout */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 28px;
+  --radius-control: 4px;
+  --radius-illustration: 6px;
+  --radius-sheet: 14px;
+  --touch-min: 44px;
+  --nav-height: 64px;
+}
+
+html {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--size-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: var(--color-wine);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-wine-dark);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
