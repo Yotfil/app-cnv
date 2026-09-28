@@ -46,7 +46,7 @@ Stack: React + Vite + TypeScript `strict`, CSS Modules, React Router, react-i18n
 ```
 npm run dev              # servidor local
 npm run build            # producción en dist/ (lo ejecuta Netlify)
-npx tsc --noEmit         # tipos
+npm run typecheck        # tipos (tsc -b; `tsc --noEmit` no comprueba nada aquí)
 npm run lint             # ESLint
 npm run format           # Prettier
 npx vitest run           # todos los tests

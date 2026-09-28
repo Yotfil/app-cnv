@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "prepare": "husky",
-    "test": "vitest"
+    "test": "vitest",
+    "typecheck": "tsc -b"
   },
   "dependencies": {
     "i18next": "^26.4.2",
