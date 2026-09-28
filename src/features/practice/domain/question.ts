@@ -1,4 +1,5 @@
 import type { Point } from '@/features/catalog'
+import { shuffle, type Random } from './random'
 
 /** A point to identify and the texts offered for it, in random order. */
 export type Question = {
@@ -6,23 +7,11 @@ export type Question = {
   options: string[]
 }
 
-/** Returns a number in [0, 1), like Math.random; injected so questions can be tested. */
-export type Random = () => number
-
 const DISTRACTORS = 3
 
 /** Key without the side suffix: cheek-left and cheek-right share "cheek". */
 function baseKey(key: string): string {
   return key.replace(/-(left|right)$/, '')
-}
-
-function shuffle<T>(items: T[], random: Random): T[] {
-  const copy = [...items]
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(random() * (i + 1))
-    ;[copy[i], copy[j]] = [copy[j], copy[i]]
-  }
-  return copy
 }
 
 /** Texts that count as right for a point: its meaning and its alternative meanings. */
