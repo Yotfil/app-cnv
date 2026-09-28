@@ -62,7 +62,7 @@ El área táctil de cada punto es siempre de 44 px aunque el orbe sea menor. Con
 - Opciones de práctica: ancho completo, blanco, borde 1 px `#E6DED8`, radio 4, padding 14×16, sin sombra. Correcta: borde y anillo interior en Correcto con ✓ blanco en disco de 20 px. Elegida incorrecta: borde en Incorrecto, texto en Texto 2, ✗ blanco en disco gris.
 - Botón principal: 52 px de alto, vino, texto blanco Jost 400 17 px, radio 4. Foco visible: contorno 2 px tinta con separación 3 px.
 - Campo de texto: 48 px, borde Piel línea, foco en vino con halo Piel luz de 3 px.
-- Barra inferior: 64 px, blanco, borde superior Piel luz, dos destinos ("Estudiar", "Practicar"), activo en vino, iconos de trazo 1.4.
+- Barra inferior: 64 px, blanco, borde superior Piel luz, tres destinos ("Inicio", "Estudiar", "Practicar"; "Inicio" añadido el 28 de septiembre de 2026 para volver a la portada en la app instalada), agrupados en el centro con 160 px como máximo cada uno, activo en vino, iconos de trazo 1.4. No aparece en la primera visita, hasta pulsar "Continuar".
 - Rótulos de lateralidad: Jost 300 12 px en Texto 2, en las esquinas superiores de la ilustración: "Derecha de la persona" a la izquierda, "Izquierda de la persona" a la derecha.
 - Líneas estructurales: siempre 1 px, en Piel luz o Piel línea. Sin sombras salvo la ficha. Radios: 4 en controles y etiquetas, 6 en la ilustración, 14 en la ficha.
 

@@ -44,10 +44,26 @@
   "nav": {
     "label": "Navegación principal",
     "study": "Estudiar",
-    "practice": "Practicar"
+    "practice": "Practicar",
+    "home": "Inicio"
   },
   "notFound": {
     "title": "Esta página no existe",
     "message": "Usa la barra de abajo para volver a estudiar."
+  },
+  "home": {
+    "credit": "Del curso «Entrenamiento de Micropicores» de El Código del Comportamiento.",
+    "noticeTitle": "Cuidado, toma estos datos con mucho cuidado.",
+    "notice": {
+      "reliable": "El autor del curso solo ha podido comprobar como fiables unos pocos micropicores.",
+      "context": "Interpreta cada micropicor junto con otros gestos, el contenido verbal, el paraverbal, el estímulo que detona la reacción y el contexto."
+    },
+    "aliasLabel": "Tu alias (opcional)",
+    "aliasHint": "Se guarda solo en este dispositivo.",
+    "continue": "Continuar",
+    "clear": "Borrar mi progreso",
+    "clearConfirm": "Se borrarán tu alias y tus aciertos de este dispositivo.",
+    "clearYes": "Sí, borrar",
+    "clearNo": "Cancelar"
   }
 }

@@ -1,9 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { NavLink, useLocation } from 'react-router'
 import styles from './BottomNav.module.css'
-
-// Until the map exists (task 5.2) "Study" opens the only region with points.
-const STUDY_PATH = '/region/face'
+import { STUDY_PATH } from './paths'
 
 /** Bottom navigation: the way to move around in the installed app, which has no address bar. */
 export function BottomNav() {
@@ -13,6 +11,12 @@ export function BottomNav() {
 
   return (
     <nav className={styles.bar} aria-label={t('nav.label')}>
+      <NavLink to="/" end className={styles.item}>
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden>
+          <path d="M4.5 11 12 4.5l7.5 6.5v8.5h-5v-5h-5v5h-5z" />
+        </svg>
+        {t('nav.home')}
+      </NavLink>
       <NavLink to={STUDY_PATH} className={styles.item} aria-current={studying ? 'page' : undefined}>
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden>
           <circle cx="12" cy="12" r="7" />
