@@ -1,0 +1,155 @@
+/* Card spec in docs/design/tokens.md ("Superficies y componentes"). */
+
+.card {
+  --tone: var(--color-side-center);
+
+  box-sizing: border-box;
+  color: var(--color-ink);
+}
+
+.card[data-tone='right'] {
+  --tone: var(--color-side-right);
+}
+
+.card[data-tone='left'] {
+  --tone: var(--color-side-left);
+}
+
+/* Touch: bottom panel fixed to the screen. */
+.card[data-variant='sheet'] {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  max-height: 70dvh;
+  overflow-y: auto;
+  padding: var(--space-3) var(--space-5) var(--space-6);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-skin-light);
+  border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+  box-shadow: 0 -8px 30px color-mix(in srgb, var(--color-ink) 6%, transparent);
+  animation: sheet-in 220ms ease-out;
+}
+
+/* Pointer: floating label beside the marker, inside the illustration overlay. */
+.card[data-variant='floating'] {
+  position: absolute;
+  z-index: 5;
+  width: min(260px, 70%);
+  padding: var(--space-3) var(--space-4);
+  background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+  backdrop-filter: blur(14px);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  border-radius: var(--radius-control);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--color-ink) 5%, transparent);
+  translate: 0 -50%;
+}
+
+.card[data-variant='floating'][data-placement='right'] {
+  margin-left: 28px;
+}
+
+.card[data-variant='floating'][data-placement='left'] {
+  margin-right: 28px;
+}
+
+.handle {
+  display: block;
+  width: 36px;
+  height: 3px;
+  margin: 0 auto var(--space-3);
+  border-radius: 2px;
+  background: var(--color-skin-light);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.label {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--size-mono);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--tone);
+}
+
+.close {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-skin-light);
+  border-radius: 50%;
+  background: var(--color-surface);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.close svg {
+  fill: none;
+  stroke: var(--color-ink-2);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.secondary {
+  margin: var(--space-1) 0 var(--space-3);
+  font-weight: var(--weight-light);
+  font-size: var(--size-label);
+  color: var(--color-ink-2);
+}
+
+.meaning {
+  margin: 0;
+  padding-left: 14px;
+  border-left: 1px solid var(--color-skin-line);
+  font-weight: var(--weight-light);
+  font-size: var(--size-quote);
+  line-height: 1.45;
+}
+
+.card[data-variant='floating'] .meaning {
+  font-size: var(--size-option);
+}
+
+.alternative {
+  margin-top: var(--space-3);
+}
+
+.also {
+  margin: 0 0 var(--space-1);
+  font-size: var(--size-caption);
+  color: var(--color-ink-2);
+}
+
+.detail {
+  margin: var(--space-3) 0 0;
+  font-size: var(--size-label);
+  color: var(--color-ink-2);
+}
+
+.page {
+  margin: var(--space-3) 0 0;
+  font-weight: var(--weight-light);
+  font-size: var(--size-caption);
+  color: var(--color-ink-2);
+}
+
+@keyframes sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card[data-variant='sheet'] {
+    animation: none;
+  }
+}

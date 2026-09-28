@@ -11,5 +11,28 @@
   "sideLabels": {
     "personRight": "Derecha de la persona",
     "personLeft": "Izquierda de la persona"
+  },
+  "pointCard": {
+    "header": "{{side}} · {{region}}",
+    "side": {
+      "left": "Lado izquierdo",
+      "right": "Lado derecho",
+      "center": "Centro"
+    },
+    "sidePerson": {
+      "left": "Lado izquierdo de la persona",
+      "right": "Lado derecho de la persona",
+      "center": "Línea media"
+    },
+    "also": "también",
+    "muscle": "Músculo {{name}}",
+    "page": "Lámina {{page}}",
+    "close": "Cerrar",
+    "tags": {
+      "personal": "Personal",
+      "external": "Exterior",
+      "micro-caress": "Microcaricia",
+      "inner-side": "Cara interna"
+    }
   }
 }
