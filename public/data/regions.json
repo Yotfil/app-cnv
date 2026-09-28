@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1d1e7f40-4986-4b2d-8b3f-e522216b7c48",
+    "key": "front-body",
+    "name": "Cuerpo, de frente",
+    "view": "front",
+    "image": "/img/front-body.png",
+    "width": 900,
+    "height": 1600,
+    "mirror": false
+  },
+  {
+    "id": "ccc312f7-a916-4eb8-92dd-e8ad201454eb",
+    "key": "face",
+    "name": "Cara",
+    "view": "front",
+    "image": "/img/face.png",
+    "width": 1000,
+    "height": 1000,
+    "parent": "1d1e7f40-4986-4b2d-8b3f-e522216b7c48",
+    "zone": [
+      { "x": 42, "y": 3 },
+      { "x": 58, "y": 3 },
+      { "x": 58, "y": 15 },
+      { "x": 42, "y": 15 }
+    ],
+    "mirror": false
+  }
+]
