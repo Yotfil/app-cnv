@@ -52,7 +52,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 - [x] 6.1 TDD sobre `practice/domain/question.ts`: `generateQuestion(point, catalog, random)` con la prioridad de distractores (simétrico, misma región, cualquiera), exclusión de textos iguales al correcto y a sus alternativos, e `isCorrect(question, option)`; tests para región con suficientes puntos, región con pocos puntos, texto repetido y punto con alternativos
 - [x] 6.2 TDD sobre `practice/domain/session.ts`: `createSession(regionKey, catalog, random)` que recorre los puntos sin repetir y devuelve avance y resumen; tests de orden sin repetición y de resumen final
 - [x] 6.3 `practice/ui/PracticeScreen` en `/practice` con selector de región (solo `face` activa), pregunta con un único marcador visible, cuatro opciones en tarjetas de ancho completo, corrección en rojo y verde, ficha del punto, botón siguiente, avance "n de N" y resumen final con repetir; test de Testing Library para "elegir opción muestra corrección y ficha"; verificar una sesión completa en emulación móvil
-- [ ] 6.4 Documentar en `docs/practice.md` la regla de distractores y los casos especiales; verificar que los ejemplos del documento coinciden con los tests
+- [x] 6.4 Documentar en `docs/practice.md` la regla de distractores y los casos especiales; verificar que los ejemplos del documento coinciden con los tests
 
 ## 7. Progreso local
 
