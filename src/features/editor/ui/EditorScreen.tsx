@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useCatalog, type Catalog, type Point, type Region } from '@/features/catalog'
 import { Arrow } from '@/shared/ui/Arrow'
 import { Illustration } from '@/shared/ui/Illustration'
+import { exportCatalog } from '../domain/export'
 import styles from './EditorScreen.module.css'
 
 type Coordinate = { x: number; y: number }
@@ -39,6 +40,16 @@ function countChanges<T>(current: T[], original: T[]): number {
     .length
 }
 
+/** Starts the download of a text file. */
+function download(name: string, text: string) {
+  const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }))
+  const link = document.createElement('a')
+  link.href = url
+  link.download = name
+  link.click()
+  setTimeout(() => URL.revokeObjectURL(url), 0)
+}
+
 function Editor({ catalog }: { catalog: Catalog }) {
   const { t } = useTranslation()
   const [points, setPoints] = useState(catalog.points)
@@ -50,7 +61,16 @@ function Editor({ catalog }: { catalog: Catalog }) {
       editable[0]?.key,
   )
 
-  const changed = countChanges(points, catalog.points) + countChanges(regions, catalog.regions)
+  // Changes are counted against the last export (at first, the loaded catalog).
+  const [baseline, setBaseline] = useState({ points: catalog.points, regions: catalog.regions })
+  const changed = countChanges(points, baseline.points) + countChanges(regions, baseline.regions)
+
+  const onExport = () => {
+    const files = exportCatalog(regions, points)
+    download('regions.json', files.regions)
+    download('points.json', files.points)
+    setBaseline({ points, regions })
+  }
 
   // Leaving the page would lose the adjustments that are not exported yet.
   useEffect(() => {
@@ -81,6 +101,9 @@ function Editor({ catalog }: { catalog: Catalog }) {
         <p className={styles.changes} role="status">
           {t('editor.changes', { count: changed })}
         </p>
+        <button type="button" className={styles.export} onClick={onExport}>
+          {t('editor.export')}
+        </button>
       </header>
 
       {children.length > 0 ? (

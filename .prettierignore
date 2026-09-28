@@ -5,3 +5,5 @@ openspec
 .agents
 .claude
 CHANGELOG.md
+# Catalog data: written by the editor export (JSON.stringify, 2 spaces), not by Prettier.
+public/data

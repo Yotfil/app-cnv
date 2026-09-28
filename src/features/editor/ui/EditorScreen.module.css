@@ -202,3 +202,18 @@
   color: var(--color-muted-text);
   cursor: default;
 }
+
+.export {
+  min-height: 40px;
+  padding: 0 var(--space-4);
+  border: 0;
+  border-radius: var(--radius-control);
+  background: var(--color-wine);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.export:hover {
+  background: var(--color-wine-dark);
+}

@@ -120,7 +120,9 @@
     "y": 75,
     "radius": 4,
     "meaning": "CON ESI- Me pone nervioso, posición altiva.",
-    "alternativeMeanings": ["ASI- algo escondido me hace dudar"],
+    "alternativeMeanings": [
+      "ASI- algo escondido me hace dudar"
+    ],
     "tags": [],
     "page": 4
   },

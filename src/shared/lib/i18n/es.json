@@ -116,6 +116,7 @@
     "createZone": "Crear zona",
     "addCorner": "Añadir vértice",
     "removeCorner": "Quitar vértice",
-    "zoneHint": "Arrastra cada vértice o usa las flechas del teclado (0,5 %). \"Añadir vértice\" lo pone a mitad del lado que sale del vértice elegido."
+    "zoneHint": "Arrastra cada vértice o usa las flechas del teclado (0,5 %). \"Añadir vértice\" lo pone a mitad del lado que sale del vértice elegido.",
+    "export": "Exportar"
   }
 }
