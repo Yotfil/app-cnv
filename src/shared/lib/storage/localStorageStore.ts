@@ -38,6 +38,8 @@ export function createLocalStorageStore<T>(key: string, { onUnavailable }: Optio
   }
 
   return {
+    /** False once the browser refused the storage and the document lives only in memory. */
+    persistent: (): boolean => fallback === null,
     read,
     write(value: T): void {
       if (fallback) return fallback.write(value)

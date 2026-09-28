@@ -3,6 +3,8 @@ import userEvent from '@testing-library/user-event'
 import { createMemoryRouter, RouterProvider } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { CatalogContext, type Catalog, type Point, type Region } from '@/features/catalog'
+import { ProgressProvider, type Progress } from '@/features/progress'
+import { createMemoryStore } from '@/shared/lib/storage/memoryStore'
 import { PracticeScreen } from './PracticeScreen'
 
 const face: Region = {
@@ -51,9 +53,11 @@ describe('PracticeScreen', () => {
       initialEntries: ['/practice/face'],
     })
     render(
-      <CatalogContext value={{ status: 'ready', catalog }}>
-        <RouterProvider router={router} />
-      </CatalogContext>,
+      <ProgressProvider store={createMemoryStore<Progress>()}>
+        <CatalogContext value={{ status: 'ready', catalog }}>
+          <RouterProvider router={router} />
+        </CatalogContext>
+      </ProgressProvider>,
     )
 
     const options = within(screen.getByRole('list', { name: '¿Qué significa?' })).getAllByRole(

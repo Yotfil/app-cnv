@@ -9,7 +9,7 @@ import { createLocalStorageStore } from '@/shared/lib/storage/localStorageStore'
 import { ErrorBoundary } from './ErrorBoundary'
 import { router } from './router'
 
-// The warning about progress that cannot be saved is shown by the practice screen (task 7.3).
+// If the browser blocks the storage, progress continues in memory and practice warns about it.
 const progressStore = createLocalStorageStore<Progress>('micropicores.progress.v1')
 
 createRoot(document.getElementById('root')!).render(

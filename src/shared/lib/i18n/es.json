@@ -93,6 +93,8 @@
     "misses_other": "{{count}} fallos",
     "repeat": "Repetir",
     "otherRegion": "Elegir otra región",
-    "notAvailable": "Esta región todavía no se puede practicar."
+    "notAvailable": "Esta región todavía no se puede practicar.",
+    "alias": "Practicando como {{alias}}",
+    "notSaved": "Este navegador no deja guardar datos (quizá estás en una ventana privada): tu progreso de hoy se perderá al cerrar la app."
   }
 }

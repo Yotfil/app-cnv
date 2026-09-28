@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useParams } from 'react-router'
 import { PointCard, useCatalog, type Catalog, type Region } from '@/features/catalog'
+import { useProgress } from '@/features/progress'
 import { Illustration } from '@/shared/ui/Illustration'
 import { Marker } from '@/shared/ui/Marker'
 import { Orb } from '@/shared/ui/Orb'
@@ -92,6 +93,8 @@ function PracticeSession({ region, catalog }: { region: PracticeRegion; catalog:
   const { t } = useTranslation()
   const session = useSession(region.key, catalog)
   const { question, chosen } = session
+  const { progress, saved, record } = useProgress()
+  const alias = progress?.alias
   const afterRef = useRef<HTMLDivElement>(null)
 
   // On a phone the verdict, the card and "Next" sit below the options: bring them into view.
@@ -106,12 +109,18 @@ function PracticeSession({ region, catalog }: { region: PracticeRegion; catalog:
       <main className={styles.screen}>
         <p className={styles.counter}>{region.name}</p>
         <h1 className={styles.title}>{t('practice.resultTitle')}</h1>
+        {alias && <p className={styles.alias}>{t('practice.alias', { alias })}</p>}
         <p className={styles.result}>
           {t('practice.result', {
             hits: t('practice.hits', { count: session.summary.hits }),
             misses: t('practice.misses', { count: session.summary.misses }),
           })}
         </p>
+        {!saved && (
+          <p className={styles.warning} role="status">
+            {t('practice.notSaved')}
+          </p>
+        )}
         <div className={styles.actions}>
           <button type="button" className={styles.primary} onClick={session.restart}>
             {t('practice.repeat')}
@@ -134,6 +143,7 @@ function PracticeSession({ region, catalog }: { region: PracticeRegion; catalog:
         })}
       </p>
       <h1 className={styles.title}>{t('practice.title')}</h1>
+      {alias && <p className={styles.alias}>{t('practice.alias', { alias })}</p>}
 
       <Illustration
         src={region.image}
@@ -166,7 +176,11 @@ function PracticeSession({ region, catalog }: { region: PracticeRegion; catalog:
                 data-result={right ? 'correct' : wrongPick ? 'incorrect' : undefined}
                 data-answered={chosen !== undefined || undefined}
                 disabled={chosen !== undefined}
-                onClick={() => session.choose(option)}
+                onClick={() => {
+                  if (chosen !== undefined) return
+                  session.choose(option)
+                  record(point.id, 'meaning', isCorrect(question, option))
+                }}
               >
                 <span className={styles.optionText}>{option}</span>
                 {right && (
