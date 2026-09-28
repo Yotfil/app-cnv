@@ -14,6 +14,7 @@ El grupo de la clase del curso "Entrenamiento de Micropicores" solo dispone de u
 - Vista de región "face" con sus puntos marcados con latido sutil; al tocar o pasar el ratón se abre la ficha del punto con zona, lado y significado literal del PDF. Rótulo fijo de lateralidad.
 - Modo de práctica "¿qué significa?" restringido a los puntos de la cara: se ilumina un punto y se eligen 4 significados.
 - Progreso por punto, alias y `userId` nulo guardados en localStorage.
+- Pantalla "Tu progreso" con lo practicado por región y por micropicor (añadida el 28 de septiembre de 2026; solo muestra los datos, sin medir dominio).
 - Editor oculto de posiciones (ruta no enlazada) que permite mover puntos sobre la imagen y exportar el JSON para subirlo al repositorio.
 - Catálogo de datos `regions.json` y `points.json` con la forma del futuro endpoint de FastAPI. En el POC solo se rellenan las regiones `front-body` y `face` con sus puntos.
 - Prompts en inglés para generar en Gemini Nano Banana el cuerpo entero frontal y la cara frontal (los genera el usuario).

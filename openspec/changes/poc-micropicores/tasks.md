@@ -59,6 +59,7 @@ Regla de commits: un commit por tarea, creado por el usuario con el mensaje que 
 - [x] 7.1 TDD sobre `progress/domain/progress.ts` con `Store` inyectable, documento versionado `micropicores.progress.v1` con `userId` nulo, `recordAnswer(pointId, mode, hit)` y `clearProgress()`; tests con almacén en memoria para acierto, fallo, recarga y borrado
 - [x] 7.2 `shared/lib/storage/localStorageStore.ts` con try/catch, cambio a memoria si falla y aviso único; verificar en Chrome con almacenamiento bloqueado que la práctica sigue y aparece el aviso
 - [x] 7.3 `progress/ui/useProgress` conectado a la práctica y alias visible en la pantalla de práctica; verificar que tras recargar los contadores del punto se conservan
+- [ ] 7.4 (añadida el 28 de septiembre de 2026, a petición del usuario; se hace tras la 8.4) Pantalla "Tu progreso" en `/progress`: TDD sobre el nuevo seam `progress/domain/summary.ts` `summarizeProgress(progress, points)` (anotado en ADR 0004) con casos de micropicores sin practicar, micropicores que ya no están en el catálogo y recuento "practicados X de N"; cuarto botón "Progreso" en la barra y enlaces "Ver mi progreso" en la portada y en el resultado de la práctica; lista por región en orden del catálogo con lado, significado, aciertos, fallos y fecha o "sin practicar", aviso con enlace a Practicar si no hay respuestas, ficha al tocar un micropicor; verificar en emulación móvil tras una sesión de práctica que los números coinciden con lo respondido
 
 ## 8. Editor de posiciones
 
