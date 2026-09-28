@@ -51,6 +51,7 @@ npm run lint             # ESLint
 npm run format           # Prettier
 npx vitest run           # todos los tests
 npx vitest src/features/practice/domain/question.test.ts   # un archivo
+npm run new-id -- 5     # 5 UUID v4 nuevos para el catálogo
 ```
 
 ## Arquitectura (ver design.md y ADR 0002 para el porqué)
